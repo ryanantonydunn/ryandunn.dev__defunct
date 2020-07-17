@@ -1,10 +1,8 @@
 {
-  "name": "brevifolia-nextjs",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Next.js",
-  "license": "MIT",
+  "name": "ryandunn.dev",
+  "description": "Personal website of software developer Ryan Dunn",
   "version": "0.1.0",
-  "author": "kendallstrautman",
+  "author": "ryanantonydunn",
   "scripts": {
     "dev": "next",
     "develop": "yarn dev",
@@ -18,17 +16,14 @@
     "raw-loader": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
     "react-markdown": "^4.3.1",
     "webpack": "^4.42.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
-  },
-  "keywords": [
-    "next"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kendallstrautman/brevifolia-nextjs"
+    "autoprefixer": "^9.8.4",
+    "postcss-nested": "^4.2.2",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.6"
   }
 }

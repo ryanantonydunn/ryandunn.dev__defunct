@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding-top: 140px;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.details {
+  position: absolute;
+  top: 124px;
+  left: 119px;
+  font-size: 0.9em;
+}
+
+.avatar {
+  position: absolute;
+  top: 54px;
+  left: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.nav > a:not(:last-child) {
+  margin-right: 5px;
+}
+
+@media (min-width: 740px) {
+  .container {
+    padding-top: 160px;
+  }
+  .nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+  }
+}
