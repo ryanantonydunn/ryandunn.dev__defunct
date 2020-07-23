@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
-import { getPosts, getPost } from "../../components/BlogPosts";
-import Layout from "../../components/Layout";
+import { getPost, getPosts } from "../../components/BlogPosts";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 export const getStaticPaths = async () => {
   const posts = await getPosts();
@@ -18,13 +19,18 @@ export const getStaticProps = async ({ params }) => {
 
 const BlogTemplate = ({ body, metaData }) => {
   return (
-    <Layout
-      title={`${metaData.title} | Ryan Dunn`}
-      description={metaData.description}
-    >
-      <h1>{metaData.title}</h1>
-      <ReactMarkdown source={body} />
-    </Layout>
+    <>
+      <Header />
+      <div style={{ height: 150 }} />
+      <h2 className="text-4xl font-bold tracking-tight mb-4 text-center">
+        {metaData.title}
+      </h2>
+      <div className="container ml-auto mr-auto">
+        <ReactMarkdown source={body} />
+      </div>
+
+      <Footer />
+    </>
   );
 };
 

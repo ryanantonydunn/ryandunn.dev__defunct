@@ -15,7 +15,9 @@ import {
   MdTimer,
   MdWeb,
 } from "react-icons/md";
-import { getPosts } from "../components/BlogPosts";
+import BlogPosts, { getPosts } from "../components/BlogPosts";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import shootyCanvasLetters from "../utils/ShootyCanvasLetters";
 
 export const getStaticProps = async () => {
@@ -24,48 +26,13 @@ export const getStaticProps = async () => {
 };
 
 const Index = ({ posts }) => {
-  const canvas = useRef();
-  useEffect(() => {
-    shootyCanvasLetters({
-      canvas: canvas.current,
-      w: 300,
-      h: 200,
-      text: "Ryan Dunn",
-      xPos: 25,
-      yPos: 27,
-      size: 6,
-      gap: 4,
-      color: "56, 161, 105",
-    });
-  }, []);
   return (
     <>
       <div
         className="flex items-center justify-center"
         style={{ height: "calc(100vh - 39px)" }}
       >
-        <canvas ref={canvas} className="absolute top-0 left-0" />
-        <nav className="absolute top-0 right-0 flex items-center p-4 mr-2 text-gray-700 text-lg">
-          <a href="/" className="text-lg font-bold text-gray-700 p-4">
-            Home
-          </a>
-          <a href="/" className="text-lg text-gray-500 p-4">
-            Blog
-          </a>
-          <div className="w-0 h-4 mr-6 ml-6 border-r border-gray-300" />
-          <button className="p-3 hover:border border-teal-400 rounded-full">
-            <FaRegEnvelope />
-          </button>
-          <button className="p-3">
-            <FaTwitter />
-          </button>
-          <button className="p-3">
-            <FaCodepen />
-          </button>
-          <button className="p-3">
-            <FaGithub />
-          </button>
-        </nav>
+        <Header />
         <div className="flex flex-col items-center justify-center">
           <h1
             className="font-bold tracking-tight mb-2"
@@ -205,107 +172,9 @@ const Index = ({ posts }) => {
             <MdArrowForward className="ml-2 text-teal-500" />
           </a>
         </div>
-
-        <div className="flex justify-between mb-20">
-          <div className="w-1/3 pl-4 pr-4">
-            <a
-              href="/"
-              className="block p-2 hover:border-4 border-yellow-500 rounded-lg text-gray-700"
-            >
-              <div
-                className="w-full bg-orange-400 mb-8"
-                style={{ paddingBottom: "50%" }}
-              ></div>
-              <h2 className="ml-4 mb-5 text-3xl leading-10">
-                How to use Tailwind with Create React App and PostCSS with no
-                hassle
-              </h2>
-              <div className="text-gray-500 ml-4 mb-4 flex items-center">
-                <MdDateRange className="mr-2" /> Jan 20th 2020
-                <div className="w-8" />
-                <MdTimer className="mr-2" /> 5 minute read
-              </div>
-            </a>
-          </div>
-          <div className="w-1/3 pl-6 pr-6">
-            <a
-              href="/"
-              className="block p-2 hover:border-4 border-red-400 rounded-lg text-gray-700"
-            >
-              <div
-                className="w-full bg-red-400 mb-8"
-                style={{ paddingBottom: "50%" }}
-              ></div>
-              <h2 className="ml-4 mb-5 text-3xl leading-10">
-                In search of the ultimate number regex
-              </h2>
-              <div className="text-gray-500 ml-4 mb-4 flex items-center">
-                <MdDateRange className="mr-2" /> Jan 20th 2020
-                <div className="w-8" />
-                <MdTimer className="mr-2" /> 5 minute read
-              </div>
-            </a>
-          </div>
-          <div className="w-1/3 pl-6 pr-6">
-            <a
-              href="/"
-              className="block p-2 hover:border-4 border-purple-400 rounded-lg text-gray-700"
-            >
-              <div
-                className="w-full bg-purple-400 mb-8"
-                style={{ paddingBottom: "50%" }}
-              ></div>
-              <h2 className="ml-4 mr-4 mb-5 text-3xl leading-10">
-                Should we set a default font-size? Ideals and practicalities
-              </h2>
-              <div className="text-gray-500 ml-4 mb-4 flex items-center">
-                <MdDateRange className="mr-2" /> Jan 20th 2020
-                <div className="w-8" />
-                <MdTimer className="mr-2" /> 5 minute read
-              </div>
-            </a>
-          </div>
-        </div>
+        <BlogPosts />
       </div>
-      <div className="bg-gray-200 text-center">
-        <div className="gradient-over" />
-        <div
-          className="p-16 container mr-auto ml-auto"
-          style={{ maxWidth: 720 }}
-        >
-          <h2 className="text-3xl font-bold tracking-tight mb-3">
-            Get in touch
-          </h2>
-          <p className="text-lg mb-4">
-            Interested in something lorem ipsum dolor
-            <br />
-            Two lines looked real nice didn't it
-          </p>
-          <div className="flex justify-center mb-10">
-            <a
-              href="https://www.raildiary.com/en"
-              className="flex items-center justify-center mr-2 ml-2 border-2 border-teal-300 text-gray-700 p-2 pl-4 pr-4 rounded-full font-bold bg-white"
-            >
-              Send email
-              <MdArrowForward className="ml-2 text-teal-500" />
-            </a>
-          </div>
-          <div className="text-center text-xl">
-            <button className="p-3 hover:border border-teal-400 rounded-full">
-              <FaRegEnvelope />
-            </button>
-            <button className="p-3">
-              <FaTwitter />
-            </button>
-            <button className="p-3">
-              <FaCodepen />
-            </button>
-            <button className="p-3">
-              <FaGithub />
-            </button>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };

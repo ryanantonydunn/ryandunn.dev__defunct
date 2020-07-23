@@ -1,5 +1,5 @@
 import matter from "gray-matter";
-import Link from "next/link";
+import { MdDateRange, MdTimer } from "react-icons/md";
 
 export const getPosts = async () => {
   const files = await require.context("../posts", true, /\.md$/);
@@ -21,14 +21,83 @@ export const getPost = async (slug) => {
 
 const BlogPosts = ({ posts = [] }) => {
   return (
-    <div>
-      <h2>Blog</h2>
-      {posts.map(({ content, metaData }) => (
-        <div key={metaData.slug}>
-          <Link href={{ pathname: `/blog/${metaData.slug}` }}>
-            <a>{metaData.title}</a>
-          </Link>
-          <p>{metaData.description}</p>
+    <div className="flex flex-wrap justify-between mb-20">
+      <div className="w-1/3 pl-4 pr-4">
+        <a
+          href="/"
+          className="block p-2 hover:border-4 border-yellow-500 rounded-lg text-gray-700"
+        >
+          <div
+            className="w-full bg-orange-400 mb-8"
+            style={{ paddingBottom: "50%" }}
+          ></div>
+          <h2 className="ml-4 mb-5 text-3xl leading-10">
+            How to use Tailwind with Create React App and PostCSS with no hassle
+          </h2>
+          <div className="text-gray-500 ml-4 mb-4 flex items-center">
+            <MdDateRange className="mr-2" /> Jan 20th 2020
+            <div className="w-8" />
+            <MdTimer className="mr-2" /> 5 minute read
+          </div>
+        </a>
+      </div>
+      <div className="w-1/3 pl-6 pr-6">
+        <a
+          href="/"
+          className="block p-2 hover:border-4 border-red-400 rounded-lg text-gray-700"
+        >
+          <div
+            className="w-full bg-red-400 mb-8"
+            style={{ paddingBottom: "50%" }}
+          ></div>
+          <h2 className="ml-4 mb-5 text-3xl leading-10">
+            In search of the ultimate number regex
+          </h2>
+          <div className="text-gray-500 ml-4 mb-4 flex items-center">
+            <MdDateRange className="mr-2" /> Jan 20th 2020
+            <div className="w-8" />
+            <MdTimer className="mr-2" /> 5 minute read
+          </div>
+        </a>
+      </div>
+      <div className="w-1/3 pl-6 pr-6">
+        <a
+          href="/"
+          className="block p-2 hover:border-4 border-purple-400 rounded-lg text-gray-700"
+        >
+          <div
+            className="w-full bg-purple-400 mb-8"
+            style={{ paddingBottom: "50%" }}
+          ></div>
+          <h2 className="ml-4 mr-4 mb-5 text-3xl leading-10">
+            Should we set a default font-size? Ideals and practicalities
+          </h2>
+          <div className="text-gray-500 ml-4 mb-4 flex items-center">
+            <MdDateRange className="mr-2" /> Jan 20th 2020
+            <div className="w-8" />
+            <MdTimer className="mr-2" /> 5 minute read
+          </div>
+        </a>
+      </div>
+      {posts.map((post) => (
+        <div className="w-1/3 pl-6 pr-6">
+          <a
+            href={`/blog/${post.metaData.slug}`}
+            className="block p-2 hover:border-4 border-purple-400 rounded-lg text-gray-700"
+          >
+            <div
+              className="w-full bg-purple-400 mb-8"
+              style={{ paddingBottom: "50%" }}
+            ></div>
+            <h2 className="ml-4 mr-4 mb-5 text-3xl leading-10">
+              {post.metaData.title}
+            </h2>
+            <div className="text-gray-500 ml-4 mb-4 flex items-center">
+              <MdDateRange className="mr-2" /> Jan 20th 2020
+              <div className="w-8" />
+              <MdTimer className="mr-2" /> 5 minute read
+            </div>
+          </a>
         </div>
       ))}
     </div>
