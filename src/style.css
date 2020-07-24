@@ -72,3 +72,26 @@ a {
   font-size: 0.8em;
   margin-right: 8px;
 }
+
+h2 {
+  @apply text-3xl font-bold tracking-tight mb-8 mt-10 border-b border-gray-200 pl-6 pr-6;
+}
+
+h3 {
+  @apply text-lg font-bold tracking-tight mb-8 mt-10 border-b border-gray-200 pl-6 pr-6;
+}
+
+ul {
+  @apply text-lg mb-8 ml-12 mr-12;
+}
+
+p {
+  @apply text-lg mb-8 ml-12 mr-12;
+}
+
+.img {
+  @apply mt-10 mb-10;
+  img {
+    @apply w-full;
+  }
+}
