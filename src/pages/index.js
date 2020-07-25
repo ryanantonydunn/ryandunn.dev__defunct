@@ -34,12 +34,7 @@ const Index = ({ posts }) => {
       >
         <Header />
         <div className="flex flex-col items-center justify-center">
-          <h1
-            className="font-bold tracking-tight mb-2"
-            style={{ fontSize: "2.75rem" }}
-          >
-            Front-end Developer & Designer
-          </h1>
+          <h1 className="mb-2">Front-end Developer & Designer</h1>
           <p className="text-xl mb-6">
             Solving problems with software since 2010
           </p>

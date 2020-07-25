@@ -73,25 +73,39 @@ a {
   margin-right: 8px;
 }
 
+h1 {
+  font-size: 2.75rem;
+  @apply font-bold tracking-tight;
+}
+
 h2 {
-  @apply text-3xl font-bold tracking-tight mb-8 mt-10 border-b border-gray-200 pl-6 pr-6;
+  @apply text-3xl font-bold tracking-tight leading-snug;
 }
 
 h3 {
-  @apply text-lg font-bold tracking-tight mb-8 mt-10 border-b border-gray-200 pl-6 pr-6;
+  @apply text-lg font-bold tracking-tight;
 }
 
-ul {
-  @apply text-lg mb-8 ml-12 mr-12;
-}
+.article {
+  h2,
+  h3 {
+    @apply mb-8 mt-10 ml-6 mr-6;
+  }
 
-p {
-  @apply text-lg mb-8 ml-12 mr-12;
-}
+  ul {
+    @apply text-lg list-disc;
+    @apply mb-8 ml-12 mr-12;
+  }
 
-.img {
-  @apply mt-10 mb-10;
-  img {
-    @apply w-full;
+  p {
+    @apply text-lg;
+    @apply mb-8 ml-12 mr-12;
+  }
+
+  .img {
+    @apply mt-10 mb-10;
+    img {
+      @apply w-full;
+    }
   }
 }

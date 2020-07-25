@@ -1,22 +1,8 @@
 import { useEffect, useRef } from "react";
-import {
-  FaCodepen,
-  FaGithub,
-  FaRegEnvelope,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
-import {
-  MdArrowForward,
-  MdDateRange,
-  MdKeyboardArrowRight,
-  MdLanguage,
-  MdNetworkLocked,
-  MdTimer,
-  MdWeb,
-} from "react-icons/md";
-import { getPosts } from "../components/BlogPosts";
-import shootyCanvasLetters from "../utils/ShootyCanvasLetters";
+import { FaCodepen, FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
+import shootyCanvasLetters, {
+  cancelShootyCanvasLetters,
+} from "../utils/ShootyCanvasLetters";
 
 const Header = () => {
   const canvas = useRef();
@@ -32,7 +18,9 @@ const Header = () => {
       gap: 4,
       color: "56, 161, 105",
     });
+    return () => cancelShootyCanvasLetters();
   }, []);
+
   return (
     <>
       <canvas ref={canvas} className="absolute top-0 left-0" />

@@ -35,25 +35,30 @@ const BlogTemplate = ({ body, metaData }) => {
         className="container ml-auto mr-auto text-lg mb-16"
         style={{ maxWidth: 720 }}
       >
-        <div className="pl-8 pr-8 mb-10">
-          <h1 className="text-4xl font-bold mb-2">{metaData.title}</h1>
-          <div className="text-gray-500 mb-5 flex items-center">
-            <MdDateRange className="mr-2" />{" "}
-            {format(new Date(metaData.date), "do MMM yyyy")}
-            <div className="w-8" />
-            <MdTimer className="mr-2" /> 5 minute read
+        <article className="article">
+          <div className="pl-8 pr-8 mb-10">
+            <h1 className="text-4xl mb-2 tracking-tight font-bold">
+              {metaData.title}
+            </h1>
+            <div className="text-gray-500 mb-5 flex items-center uppercase text-sm">
+              <span className="text-gray-700">
+                {format(new Date(metaData.date), "MMMM d, yyyy")}
+              </span>
+              <div className="w-2" />/<div className="w-2" />5 min read
+            </div>
           </div>
-        </div>
-        <div
-          className="w-full bg-purple-400 mb-10"
-          style={{ paddingBottom: "40%" }}
-        ></div>
-        <ReactMarkdown
-          source={body}
-          renderers={{
-            paragraph: renderParagraph,
-          }}
-        />
+          <div
+            className="w-full bg-purple-400 mb-10"
+            style={{ paddingBottom: "40%" }}
+          ></div>
+
+          <ReactMarkdown
+            source={body}
+            renderers={{
+              paragraph: renderParagraph,
+            }}
+          />
+        </article>
       </div>
 
       <Footer />

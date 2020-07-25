@@ -12,9 +12,7 @@ const Blog = ({ posts }) => {
     <>
       <Header />
       <div style={{ height: 150 }} />
-      <h2 className="text-4xl font-bold tracking-tight mb-4 text-center">
-        Blog
-      </h2>
+      <h1 className="text-center mb-4">Blog</h1>
       <p className="text-lg text-center mb-8">
         On-the-ground problem solving in frontend development.
         <br />
