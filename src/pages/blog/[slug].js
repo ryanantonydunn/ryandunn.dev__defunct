@@ -1,13 +1,18 @@
+import format from "date-fns/format";
 import ReactMarkdown from "react-markdown";
-import { getPost, getPosts } from "../../components/BlogPosts";
+import {
+  ArticleHero,
+  ArticleMeta,
+  getArticle,
+  getArticles,
+} from "../../components/ArticleList";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import format from "date-fns/format";
-import { MdDateRange, MdTimer } from "react-icons/md";
+import Meta from "../../components/Meta";
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts();
-  const paths = posts.map(({ metaData }) => `/blog/${metaData.slug}`);
+  const articles = await getArticles();
+  const paths = articles.map(({ metaData }) => `/blog/${metaData.slug}`);
   return {
     paths,
     fallback: false,
@@ -15,8 +20,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const post = await getPost(params.slug);
-  return { props: { ...post } };
+  const article = await getArticle(params.slug);
+  return { props: { ...article } };
 };
 
 const renderParagraph = ({ children }) =>
@@ -29,29 +34,20 @@ const renderParagraph = ({ children }) =>
 const BlogTemplate = ({ body, metaData }) => {
   return (
     <>
+      <Meta
+        title={`${metaData.title} | Ryan Dunn`}
+        description={metaData.description}
+      />
       <Header />
-      <div style={{ height: 120 }} />
-      <div
-        className="container ml-auto mr-auto text-lg mb-16"
-        style={{ maxWidth: 720 }}
-      >
-        <article className="article">
+      <div className="content pt-8 lg:pt-11">
+        <article className="article mb-16">
           <div className="pl-8 pr-8 mb-10">
-            <h1 className="text-4xl mb-2 tracking-tight font-bold">
-              {metaData.title}
-            </h1>
-            <div className="text-gray-500 mb-5 flex items-center uppercase text-sm">
-              <span className="text-gray-700">
-                {format(new Date(metaData.date), "MMMM d, yyyy")}
-              </span>
-              <div className="w-2" />/<div className="w-2" />5 min read
-            </div>
+            <h1 className="mb-5">{metaData.title}</h1>
+            <ArticleMeta metaData={metaData} />
           </div>
-          <div
-            className="w-full bg-purple-400 mb-10"
-            style={{ paddingBottom: "40%" }}
-          ></div>
-
+          <div className="mb-8">
+            <ArticleHero metaData={metaData} />
+          </div>
           <ReactMarkdown
             source={body}
             renderers={{
@@ -60,7 +56,6 @@ const BlogTemplate = ({ body, metaData }) => {
           />
         </article>
       </div>
-
       <Footer />
     </>
   );

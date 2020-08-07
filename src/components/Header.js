@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
-import { FaCodepen, FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
 import shootyCanvasLetters, {
   cancelShootyCanvasLetters,
 } from "../utils/ShootyCanvasLetters";
+import Link from "next/link";
+import styles from "./Header.module.css";
+import SocialLinks from "./SocialLinks";
 
 const Header = () => {
   const canvas = useRef();
@@ -22,30 +24,19 @@ const Header = () => {
   }, []);
 
   return (
-    <>
-      <canvas ref={canvas} className="absolute top-0 left-0" />
-      <nav className="absolute top-0 right-0 flex items-center p-4 mr-2 text-gray-700 text-lg">
-        <a href="/" className="text-lg font-bold text-gray-700 p-4">
-          Home
-        </a>
-        <a href="/blog" className="text-lg text-gray-500 p-4">
-          Blog
-        </a>
-        <div className="w-0 h-4 mr-6 ml-6 border-r border-gray-300" />
-        <button className="p-3 hover:border border-teal-400 rounded-full">
-          <FaRegEnvelope />
-        </button>
-        <button className="p-3">
-          <FaTwitter />
-        </button>
-        <button className="p-3">
-          <FaCodepen />
-        </button>
-        <button className="p-3">
-          <FaGithub />
-        </button>
+    <header className={styles.header}>
+      <canvas ref={canvas} />
+      <nav className={styles.nav}>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
       </nav>
-    </>
+      <span className={styles.break} />
+      <SocialLinks />
+    </header>
   );
 };
 

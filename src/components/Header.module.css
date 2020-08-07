@@ -1,0 +1,44 @@
+.header {
+  height: 130px;
+  padding: 75px 0 0 12px;
+  @apply flex items-center pr-4;
+
+  canvas {
+    @apply absolute top-0 left-0;
+    z-index: -1;
+    width: 300ps;
+    height: 200px;
+  }
+
+  @screen sm {
+    height: 94px;
+    padding: 5px 0 6px 0;
+    @apply flex flex-row;
+  }
+
+  border-bottom: 1px solid red;
+}
+
+.nav {
+  @apply flex items-center;
+  @apply text-gray-700;
+
+  a {
+    @apply p-3 text-gray-700;
+  }
+
+  @screen sm {
+    @apply ml-auto mr-3;
+  }
+
+  @screen lg {
+    a {
+      @apply text-lg p-4;
+    }
+  }
+}
+
+.break {
+  width: 1px;
+  @apply bg-gray-300 h-6 ml-3 mr-3;
+}

@@ -1,0 +1,17 @@
+.container {
+  @apply bg-gray-200 text-center pb-8 mt-8;
+
+  h2 {
+    @apply mb-3 mt-8;
+  }
+
+  p {
+    @apply mb-8;
+  }
+
+  @screen lg {
+    p {
+      @apply text-lg;
+    }
+  }
+}

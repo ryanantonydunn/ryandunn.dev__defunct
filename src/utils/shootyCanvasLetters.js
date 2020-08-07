@@ -151,6 +151,9 @@ const shootyCanvasLetters = ({
       letters.forEach((l) => {
         if (!l.lines) return;
         l.lines.forEach((line) => {
+          // increment shooting outward animation values
+          line.animation = lineAnimation(line.animation);
+
           const { x1, y1, x2, y2, xSlide, ySlide, animation } = line;
           const { distance } = animation;
           // set line width if straight or diagonal
@@ -166,9 +169,6 @@ const shootyCanvasLetters = ({
           cont.lineWidth = x1 !== x2 && y1 !== y2 ? 0.5 : 1;
           cont.strokeStyle = `rgba(${color}, ${1 - distance / 100})`;
           drawLine(xx1, yy1, xx2, yy2);
-
-          // increment shooting outward animation values
-          line.animation = lineAnimation(line.animation);
 
           // check for still running animations
           if (line.animation.distance !== 0) {

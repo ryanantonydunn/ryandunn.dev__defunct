@@ -12,6 +12,17 @@ body {
   @apply font-sans text-gray-700;
 }
 
+.content {
+  @apply ml-auto mr-auto pl-2 pr-2;
+  max-width: 960px;
+  &_sm {
+    max-width: 720px;
+  }
+  &_lg {
+    max-width: 1280px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,23 +31,7 @@ a {
   color: #3182ce;
 }
 
-.gradient {
-  background-image: linear-gradient(
-    to right,
-    theme("colors.teal.500"),
-    theme("colors.green.500")
-  );
-}
-
-.gradient2 {
-  background-image: linear-gradient(
-    to right,
-    theme("colors.red.300"),
-    theme("colors.orange.300")
-  );
-}
-
-.gradient-over {
+.pixel-transition {
   height: 78px;
   background-image: linear-gradient(to right, white 90%, transparent 90%),
     linear-gradient(white, white),
@@ -52,38 +47,43 @@ a {
   background-repeat: repeat-x;
 }
 
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  text-decoration: none;
-}
-
-.button svg {
-  font-size: 0.8em;
-  margin-right: 8px;
-}
-
 h1 {
-  font-size: 2.75rem;
-  @apply font-bold tracking-tight;
+  @apply font-bold tracking-tight leading-tight text-2xl;
+  @screen sm {
+    @apply text-3xl;
+  }
+  @screen md {
+    @apply text-4xl;
+  }
+  @screen lg {
+    font-size: 2.75rem;
+  }
 }
 
 h2 {
-  @apply text-3xl font-bold tracking-tight leading-snug;
+  @apply text-2xl font-bold tracking-tight leading-snug;
+  @screen md {
+    @apply text-3xl;
+  }
+  @screen lg {
+    @apply text-4xl;
+  }
 }
 
 h3 {
-  @apply text-lg font-bold tracking-tight;
+  @apply text-xl font-bold tracking-tight leading-snug;
+  @screen md {
+    @apply text-2xl;
+  }
+  @screen lg {
+    @apply text-3xl;
+  }
+}
+
+p {
+  @screen lg {
+    @apply text-lg;
+  }
 }
 
 .article {

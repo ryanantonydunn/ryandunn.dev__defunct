@@ -1,0 +1,26 @@
+.button {
+  @apply flex items-center justify-center;
+  @apply p-2 pl-4 pr-4 rounded-full;
+  @apply border-2 border-teal-300;
+  @apply text-gray-700 font-bold bg-white;
+
+  svg {
+    @apply ml-2 text-teal-500;
+  }
+}
+
+.secondary {
+  @apply border-gray-300;
+
+  svg {
+    @apply text-gray-400;
+  }
+}
+
+.list {
+  @apply flex flex-wrap justify-center;
+  > a,
+  > button {
+    @apply m-2 mb-1 mt-1;
+  }
+}

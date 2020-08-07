@@ -1,0 +1,110 @@
+.splash {
+  @apply p-4 pt-8 pb-8;
+
+  &_inner {
+    @apply flex flex-col items-center justify-center;
+    @apply text-center;
+  }
+
+  &_img {
+    @apply w-40 h-40 rounded-full overflow-hidden;
+  }
+
+  p {
+    @apply mb-6;
+  }
+
+  @screen sm {
+    @apply flex items-center justify-center;
+    height: calc(100vh - 180px);
+  }
+
+  @screen lg {
+    p {
+      @apply text-xl;
+    }
+  }
+}
+
+.intro {
+  background-image: linear-gradient(
+    to right,
+    theme("colors.teal.500"),
+    theme("colors.green.500")
+  );
+  padding-bottom: 300px;
+  @apply text-white text-center;
+
+  &_content {
+    @apply ml-auto mr-auto pt-16 pb-8 pl-2 pr-2;
+    max-width: 640px;
+  }
+}
+
+.projects {
+  @apply ml-2 mr-2 mb-8;
+  @apply bg-white rounded-lg shadow-md;
+  @apply border border-gray-200;
+  margin-top: -280px;
+
+  @screen md {
+    @apply flex justify-between;
+  }
+
+  @screen xl {
+    @apply ml-auto mr-auto;
+    max-width: 1280px;
+  }
+}
+
+.project {
+  @apply border-b border-gray-200;
+
+  &_inner {
+    @apply p-6 text-center;
+    @apply ml-auto mr-auto;
+    max-width: 420px;
+  }
+
+  p {
+    @apply mb-8;
+  }
+
+  &_image {
+    @apply p-4 mb-4 flex items-center justify-center;
+    img {
+      @apply block;
+    }
+  }
+
+  @screen md {
+    @apply border-0 border-r border-gray-200;
+    @apply w-1/3 pb-10;
+
+    &_image {
+      @apply h-40;
+    }
+  }
+
+  @screen lg {
+    &_image img {
+      width: 70%;
+    }
+  }
+}
+
+.articles {
+  @apply mt-20;
+
+  h2 {
+    @apply mb-8 text-center;
+  }
+
+  p {
+    @apply mb-8 text-center;
+  }
+
+  &_buttons {
+    @apply flex justify-center;
+  }
+}
