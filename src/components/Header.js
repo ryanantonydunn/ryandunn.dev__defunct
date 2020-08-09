@@ -3,10 +3,12 @@ import shootyCanvasLetters, {
   cancelShootyCanvasLetters,
 } from "../utils/ShootyCanvasLetters";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Header.module.css";
 import SocialLinks from "./SocialLinks";
 
 const Header = () => {
+  const { pathname } = useRouter();
   const canvas = useRef();
   useEffect(() => {
     shootyCanvasLetters({
@@ -28,10 +30,12 @@ const Header = () => {
       <canvas ref={canvas} />
       <nav className={styles.nav}>
         <Link href="/">
-          <a>Home</a>
+          <a className={pathname === "/" ? styles.active : ""}>Home</a>
         </Link>
         <Link href="/blog">
-          <a>Blog</a>
+          <a className={pathname.startsWith("/blog") ? styles.active : ""}>
+            Blog
+          </a>
         </Link>
       </nav>
       <span className={styles.break} />

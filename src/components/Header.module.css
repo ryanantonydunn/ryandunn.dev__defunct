@@ -25,6 +25,9 @@
 
   a {
     @apply p-3 text-gray-700;
+    &.active {
+      @apply font-bold;
+    }
   }
 
   @screen sm {
