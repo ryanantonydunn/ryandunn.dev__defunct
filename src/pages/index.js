@@ -2,6 +2,7 @@ import ArticleList, { getArticles } from "../components/ArticleList";
 import Button, { ButtonList } from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import LoadFloater from "../components/LoadFloater";
 import Meta from "../components/Meta";
 import styles from "./index.module.css";
 
@@ -46,61 +47,79 @@ const Index = ({ articles }) => {
       <Header />
       <div className={styles.splash}>
         <div className={styles.splash_inner}>
-          <h1 className="mb-2">Front-end Developer & Designer</h1>
-          <p>Solving problems with software since 2010</p>
-          <div className={styles.splash_img}>
-            <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
-          </div>
+          <LoadFloater delay={150}>
+            <h1 className="mb-2">Front-end Developer & Designer</h1>
+          </LoadFloater>
+          <LoadFloater delay={300}>
+            <p>Solving problems with software since 2010</p>
+          </LoadFloater>
+          <LoadFloater delay={450}>
+            <div className={styles.splash_img}>
+              <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
+            </div>
+          </LoadFloater>
         </div>
       </div>
       <div className={styles.intro}>
         <div className="pixel-transition" />
         <div className={styles.intro_content}>
-          <h2 className="mb-6">Design & Development</h2>
-          <p>
-            On-the-ground problem solving in frontend development. Javascript,
-            React, React Native, CSS, UX, Accessibility.
-          </p>
+          <LoadFloater delay={150}>
+            <h2 className="mb-6">Design & Development</h2>
+          </LoadFloater>
+          <LoadFloater delay={300}>
+            <p>
+              On-the-ground problem solving in frontend development. Javascript,
+              React, React Native, CSS, UX, Accessibility.
+            </p>
+          </LoadFloater>
         </div>
       </div>
       <div className={styles.projects}>
         {projects.map((p, i) => (
           <div key={i} className={styles.project}>
-            <div className={styles.project_inner}>
-              <div className={styles.project_image}>
-                <img
-                  src={`/static/images/${p.image}`}
-                  alt={`/static/images/${p.title}`}
-                />
-              </div>
-              <p>{p.description}</p>
-              <ButtonList>
-                {p.secondaryLink && (
-                  <Button
-                    secondary
-                    href={p.secondaryLink}
-                    title={p.secondaryLinkText}
+            <LoadFloater delay={150 + i * 150}>
+              <div className={styles.project_inner}>
+                <div className={styles.project_image}>
+                  <img
+                    src={`/static/images/${p.image}`}
+                    alt={`/static/images/${p.title}`}
                   />
-                )}
-                {p.primaryLink && (
-                  <Button href={p.primaryLink} title={p.primaryLinkText} />
-                )}
-              </ButtonList>
-            </div>
+                </div>
+                <p>{p.description}</p>
+                <ButtonList>
+                  {p.secondaryLink && (
+                    <Button
+                      secondary
+                      href={p.secondaryLink}
+                      title={p.secondaryLinkText}
+                    />
+                  )}
+                  {p.primaryLink && (
+                    <Button href={p.primaryLink} title={p.primaryLinkText} />
+                  )}
+                </ButtonList>
+              </div>
+            </LoadFloater>
           </div>
         ))}
       </div>
 
       <div className={styles.articles}>
-        <h2>Latest Articles</h2>
-        <p>
-          On-the-ground problem solving in frontend development.
-          <br />
-          Javascript, React, React Native, CSS, UX, Accessibility.
-        </p>
-        <p className={styles.articles_buttons}>
-          <Button href="/blog" title="View all articles" />
-        </p>
+        <LoadFloater delay={150}>
+          <h2>Latest Articles</h2>
+        </LoadFloater>
+        <LoadFloater delay={300}>
+          <p>
+            On-the-ground problem solving in frontend development.
+            <br />
+            Javascript, React, React Native, CSS, UX, Accessibility.
+          </p>
+        </LoadFloater>
+        <LoadFloater delay={450}>
+          <p className={styles.articles_buttons}>
+            <Button href="/blog" title="View all articles" />
+          </p>
+        </LoadFloater>
         <ArticleList articles={articles.slice(0, 3)} />
       </div>
       <Footer />

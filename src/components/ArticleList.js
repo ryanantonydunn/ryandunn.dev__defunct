@@ -1,6 +1,7 @@
 import format from "date-fns/format";
 import matter from "gray-matter";
 import styles from "./ArticleList.module.css";
+import LoadFloater from "./LoadFloater";
 
 export const getArticles = async () => {
   const files = await require.context("../articles", true, /\.md$/);
@@ -40,15 +41,17 @@ export const ArticleMeta = ({ metaData }) => (
 const ArticleList = ({ articles = [] }) => {
   return (
     <div className={styles.container}>
-      {articles.map(({ metaData }) => (
+      {articles.map(({ metaData }, i) => (
         <article key={metaData.slug} className={styles.item}>
-          <a href={`/blog/${metaData.slug}`} className={styles.link}>
-            <ArticleHero metaData={metaData} />
-            <div className="p-4 pt-6">
-              <h3 className="mb-5">{metaData.title}</h3>
-              <ArticleMeta metaData={metaData} />
-            </div>
-          </a>
+          <LoadFloater delay={(i % 3) * 150}>
+            <a href={`/blog/${metaData.slug}`} className={styles.link}>
+              <ArticleHero metaData={metaData} />
+              <div className="p-4 pt-6">
+                <h3 className="mb-5">{metaData.title}</h3>
+                <ArticleMeta metaData={metaData} />
+              </div>
+            </a>
+          </LoadFloater>
         </article>
       ))}
     </div>
