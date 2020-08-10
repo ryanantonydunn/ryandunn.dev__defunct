@@ -4,8 +4,10 @@ import styles from "./LoadFloater.module.css";
 const listeners = [];
 let checkListeners;
 
-const getScroll = () =>
-  window.pageYOffset || document.documentElement.scrollTop;
+export const getScroll = () =>
+  typeof window !== "undefined"
+    ? window.pageYOffset || document.documentElement.scrollTop
+    : 0;
 
 if (typeof window !== "undefined") {
   checkListeners = () => {
