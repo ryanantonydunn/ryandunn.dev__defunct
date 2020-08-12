@@ -16,17 +16,19 @@
     transform: translateY(-100%);
     opacity: 0;
     animation: float-up 0.2s linear;
+    overflow: hidden;
   }
 
   &.show {
     transform: translateY(0);
     opacity: 1;
     animation: float-down 0.2s linear;
+    overflow: visible;
   }
 
   canvas {
     @apply absolute top-0 left-0;
-    width: 300ps;
+    width: 300px;
     height: 200px;
   }
 
