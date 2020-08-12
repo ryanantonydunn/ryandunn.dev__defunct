@@ -17,14 +17,15 @@ const projects = [
     description:
       "Sitediary is project management software for the Rail Construction industry. I worked on yadda yadda yadda.",
     image: "raildiary.svg",
+    imageClass: "pl-2 pr-2",
     primaryLink: "https://www.raildiary.com/en",
     primaryLinkText: "Visit Website",
   },
   {
-    title: "Raildiary",
+    title: "MyDailyTracker",
     description:
       "Sitediary is project management software for the Rail Construction industry. I worked on yadda yadda yadda.",
-    image: "raildiary.svg",
+    image: "mydailytracker.png",
     primaryLink: "https://www.raildiary.com/en",
     primaryLinkText: "Visit Website",
   },
@@ -48,7 +49,7 @@ const Index = ({ articles }) => {
       <div className={styles.splash}>
         <div className={styles.splash_inner}>
           <LoadFloater delay={150}>
-            <h1 className="mb-2">Front-end Developer & Designer</h1>
+            <h1 className="mb-2">Front End Developer & Designer</h1>
           </LoadFloater>
           <LoadFloater delay={300}>
             <p>Solving problems with software since 2010</p>
@@ -81,6 +82,7 @@ const Index = ({ articles }) => {
               <div className={styles.project_inner}>
                 <div className={styles.project_image}>
                   <img
+                    className={p.imageClass || ""}
                     src={`/static/images/${p.image}`}
                     alt={`/static/images/${p.title}`}
                   />
