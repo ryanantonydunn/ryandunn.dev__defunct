@@ -1,9 +1,6 @@
 ---
 author: "Ryan Dunn"
 date: "2020-07-04T23:00:00.000Z"
-hero_class: "bg-green-500"
-hero_image: "../static/images/project-ants.png"
-hero_alt: "Image description"
 title: "How to use Tailwind with Create React App and PostCSS with no hassle"
 description: "I really like styled components and CSS in JS in general, but this has quickly overtaken as my favourite way to do styling in React."
 slug: "how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle"

@@ -45,11 +45,8 @@ const ArticleList = ({ articles = [] }) => {
         <article key={metaData.slug} className={styles.item}>
           <LoadFloater delay={(i % 3) * 150}>
             <a href={`/blog/${metaData.slug}`} className={styles.link}>
-              <ArticleHero metaData={metaData} />
-              <div className="p-4 pt-6">
-                <h3 className="mb-5">{metaData.title}</h3>
-                <ArticleMeta metaData={metaData} />
-              </div>
+              <h3 className="mb-5 text-2xl">{metaData.title}</h3>
+              <ArticleMeta metaData={metaData} />
             </a>
           </LoadFloater>
         </article>

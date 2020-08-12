@@ -1,9 +1,6 @@
 ---
 author: "Ryan Dunn"
 date: "2020-02-11T00:00:00.000Z"
-hero_class: "bg-purple-500"
-hero_image: "../static/images/project-ants.png"
-hero_alt: "Image description"
 title: "Using my command history to decide some aliases"
 description: "Today I finally decided to set up some aliases to make my life easier in the terminal, however I was not so sure what would be most useful for me."
 slug: "using-my-command-history-to-decide-some-aliases"

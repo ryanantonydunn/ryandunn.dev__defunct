@@ -1,9 +1,6 @@
 ---
 author: "Ryan Dunn"
 date: "2020-05-06T23:00:00.000Z"
-hero_class: "bg-orange-500"
-hero_image: "../static/images/project-ants.png"
-hero_alt: "Image description"
 title: "In search of the ultimate number regex"
 description: "Doing perfect numerical validation using a single regex."
 slug: "in-search-of-the-ultimate-number-regex"

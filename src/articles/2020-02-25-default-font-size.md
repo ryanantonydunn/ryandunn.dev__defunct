@@ -1,9 +1,6 @@
 ---
 author: "Ryan Dunn"
 date: "2020-02-25T00:00:00.000Z"
-hero_class: "bg-red-500"
-hero_image: "../static/images/project-ants.png"
-hero_alt: "Image description"
 title: "Should we set a default font-size? Ideals and practicalities"
 description: "Most web browsers have a setting to customise what the default font size is. This can be used by visually impaired users to increase readability."
 slug: "should-we-set-a-default-font-size-ideals-and-practicalities"

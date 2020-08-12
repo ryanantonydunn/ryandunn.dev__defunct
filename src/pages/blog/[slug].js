@@ -44,9 +44,7 @@ const BlogTemplate = ({ body, metaData }) => {
           <div className="pl-8 pr-8 mb-10">
             <h1 className="mb-5">{metaData.title}</h1>
             <ArticleMeta metaData={metaData} />
-          </div>
-          <div className="mb-8">
-            <ArticleHero metaData={metaData} />
+            <div className="h-px bg-gray-200 mt-8" />
           </div>
           <ReactMarkdown
             source={body}
