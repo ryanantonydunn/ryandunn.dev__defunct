@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export default function Meta({
-  title = "Ryan Dunn",
+  title = "Ryan Dunn | Front End Developer & Designer",
   description = "Front-end developer and designer. Javascript, ReactJS, React Native and App Development",
 }) {
   return (
@@ -10,6 +10,7 @@ export default function Meta({
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="Description" content={description}></meta>
+      <link rel="shortcut icon" href="/static/favicon.png" />
     </Head>
   );
 }
