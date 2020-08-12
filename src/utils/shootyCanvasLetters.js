@@ -186,8 +186,8 @@ const shootyCanvasLetters = ({
   // move the mouse
   const mouseMove = (x, y) => {
     letters.forEach((l) => {
-      const lx = canvasOffset.x + l.x;
-      const ly = canvasOffset.y + l.y;
+      const lx = l.x;
+      const ly = l.y;
       if (x >= lx && x <= lx + l.w && y >= ly && y <= ly + l.h) {
         let delay = 0;
         l.lines.forEach((line) => {
@@ -203,20 +203,20 @@ const shootyCanvasLetters = ({
   };
 
   ref.mouseMove = (e) => {
-    mouseMove(e.pageX, e.pageY);
+    mouseMove(e.offsetX, e.offsetY);
   };
 
   ref.touchMove = (e) => {
-    mouseMove(e.touches[0].pageX, e.touches[0].pageY);
+    mouseMove(e.touches[0].offsetX, e.touches[0].offsetY);
   };
 
-  document.addEventListener("mousemove", ref.mouseMove);
-  document.addEventListener("touchstart", ref.touchMove);
+  canvas.addEventListener("mousemove", ref.mouseMove);
+  canvas.addEventListener("touchstart", ref.touchMove);
 };
 
-export const cancelShootyCanvasLetters = () => {
-  document.removeEventListener("mousemove", ref.mouseMove);
-  document.removeEventListener("touchstart", ref.touchMove);
+export const cancelShootyCanvasLetters = (canvas) => {
+  canvas.removeEventListener("mousemove", ref.mouseMove);
+  canvas.removeEventListener("touchstart", ref.touchMove);
 };
 
 export default shootyCanvasLetters;

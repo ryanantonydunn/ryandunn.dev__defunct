@@ -25,7 +25,9 @@ const Header = () => {
       gap: 4,
       color: "56, 161, 105",
     });
-    return () => cancelShootyCanvasLetters();
+    return () => {
+      cancelShootyCanvasLetters(canvas.current);
+    };
   }, []);
 
   // show on scroll
