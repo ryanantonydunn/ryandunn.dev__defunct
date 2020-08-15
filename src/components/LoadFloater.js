@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./LoadFloater.module.css";
 
-const listeners = [];
+let count = 0;
+const listeners = {};
 let checkListeners;
 
 export const getScroll = () =>
@@ -12,13 +13,15 @@ export const getScroll = () =>
 if (typeof window !== "undefined") {
   checkListeners = () => {
     const windowBottom = getScroll() + Math.max(window.innerHeight, 200);
-    listeners.forEach(({ y, delay, hasAnimated, animate }, i) => {
-      if (hasAnimated) return;
-      if (y < windowBottom) {
-        listeners[i].hasAnimated = true;
-        setTimeout(() => animate(), delay);
+    Object.entries(listeners).forEach(
+      ([key, { y, delay, hasAnimated, animate }]) => {
+        if (hasAnimated) return;
+        if (y < windowBottom) {
+          listeners[key].hasAnimated = true;
+          setTimeout(() => animate(), delay);
+        }
       }
-    });
+    );
   };
   window.addEventListener("scroll", checkListeners);
 }
@@ -27,16 +30,18 @@ const LoadFloater = ({ delay = 0, children, className }) => {
   const ref = useRef();
   const [show, setShow] = useState(false);
   useEffect(() => {
-    const index = listeners.length;
+    const index = String(++count);
     const { top, height } = ref.current.getBoundingClientRect();
-    listeners.push({
+    listeners[index] = {
       y: getScroll() + top + Math.min(height, 200),
       delay,
       hasAnimated: false,
       animate: () => setShow(true),
-    });
+    };
     checkListeners && checkListeners();
-    return () => listeners.splice(index, 1);
+    return () => {
+      delete listeners[index];
+    };
   }, []);
   return (
     <div
