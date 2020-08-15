@@ -43,9 +43,9 @@ const ArticleList = ({ articles = [] }) => {
     <div className={styles.container}>
       {articles.map(({ metaData }, i) => (
         <article key={metaData.slug} className={styles.item}>
-          <LoadFloater delay={(i % 3) * 150}>
+          <LoadFloater delay={(i % 3) * 150} className={styles.floater}>
             <a href={`/blog/${metaData.slug}`} className={styles.link}>
-              <h3 className="mb-5 text-2xl">{metaData.title}</h3>
+              <h3>{metaData.title}</h3>
               <ArticleMeta metaData={metaData} />
             </a>
           </LoadFloater>

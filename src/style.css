@@ -107,5 +107,27 @@ p {
     img {
       @apply w-full;
     }
+    em {
+      @apply block mt-3 text-center text-gray-500;
+    }
+  }
+
+  table {
+    @apply w-full mt-10 mb-10;
+  }
+
+  th {
+    @apply text-left p-2;
+  }
+
+  td {
+    @apply p-2;
+  }
+
+  tr:nth-child(odd) td {
+    @apply bg-gray-200;
+  }
+  tr:nth-child(even) td {
+    @apply bg-gray-100;
   }
 }

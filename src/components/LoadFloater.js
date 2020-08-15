@@ -23,7 +23,7 @@ if (typeof window !== "undefined") {
   window.addEventListener("scroll", checkListeners);
 }
 
-const LoadFloater = ({ delay = 0, children }) => {
+const LoadFloater = ({ delay = 0, children, className }) => {
   const ref = useRef();
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -41,7 +41,9 @@ const LoadFloater = ({ delay = 0, children }) => {
   return (
     <div
       ref={ref}
-      className={`${styles.floater} ${show ? styles.show : styles.hide}`}
+      className={`${styles.floater} ${
+        show ? styles.show : styles.hide
+      } ${className}`}
     >
       {children}
     </div>

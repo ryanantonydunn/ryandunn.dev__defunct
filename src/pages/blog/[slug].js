@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const renderParagraph = ({ children }) =>
-  children?.length === 1 && children[0].props.src ? (
+  children?.length && children[0].props.src ? (
     <div className="img">{children}</div>
   ) : (
     <p>{children}</p>

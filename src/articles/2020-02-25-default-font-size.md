@@ -12,12 +12,12 @@ Recently I had quite a productive conversation about default font sizes in brows
 
 Most web browsers have a setting to customise what the default font size is. This can be used by visually impaired users to increase readability and comfort.
 
-![Chrome default font settings](https://dev-to-uploads.s3.amazonaws.com/i/pztwd6yrny8elgbe1dqi.jpg)
+![Chrome default font settings](../static/blog-images/chrome-default-font-settings.jpg)
 _Chrome default font settings_
 
 This can present challenges to developers with having the layout support a wide variety of text sizes while still being usable and presentable. This gets more challenging the more complex the website or web-app is. A lot of developers opt to set the font size explicitly, effectively disabling this feature. Including Google and Facebook.
 
-![Google body tag font settings](https://dev-to-uploads.s3.amazonaws.com/i/wmuo0542mjtq9l7m1ouh.jpg)
+![Google body tag font settings](../static/blog-images/google-body-tag-font-settings.jpg)
 _Google body tag font settings_
 
 Opinions on best practices here vary. Some say it’s better to have the browser zoom feature handle all font increases, preserving the layout. Some that the feature allows people to choose the method that most suits them. Even the accessibility specifications are quite vague on this.
@@ -37,7 +37,7 @@ Users use a custom stylesheet now to set the default because sites like Google a
 
 **Dev 2:**
 Some big sites do but others do not. Just because others don’t support default sizes doesn’t mean we shouldn’t either. Mobile browsers aren't displaying them incorrectly, we’re just not building our layout flexibly enough to accommodate varying text size.
-Reference: https://www.w3.org/WAI/older-users/developing/#p
+[Reference](https://www.w3.org/WAI/older-users/developing/#p)
 
 **Dev 1:**
 Agreed, but checking the spec here it looks like the zoom feature would be enough to meet their criteria.
@@ -47,8 +47,7 @@ Is there something more specific to do with default font sizes we can see?
 **Dev 2:**
 It might be enough to simply meet the minimum standards but I think we should aim to support this feature. By explicitly setting a pixel font size we are choosing to disable it.
 
-From a survey conducted in 2018 with 248 respondents with impaired vision on how they use assistive technology:
-https://webaim.org/projects/lowvisionsurvey2/
+[Survey conducted in 2018 with 248 respondents with impaired vision on how they use assistive technology](https://webaim.org/projects/lowvisionsurvey2/)
 
 | Response                                                               | # of Respondents | % of Respondents |
 | ---------------------------------------------------------------------- | ---------------- | ---------------- |
@@ -65,9 +64,7 @@ https://webaim.org/projects/lowvisionsurvey2/
 I agree that on the surface it looks like zoom would be enough to meet the requirements, but the fact is that people use this feature. For whatever reason makes them comfortable with their particular disability they use it. I think we should support it for the small effort it takes to adjust our layout.
 
 **Dev 1:**
-Cool. So we need to mitigate the problems that arise due to this.
-
-_[list of observed issues, eg: buttons overflowing, scrollbars appearing on some elements, images unpredictably moving around]_
+Cool. So we need to mitigate the problems that arise due to this. _list of observed issues, eg: buttons overflowing, scrollbars appearing on some elements, images unpredictably moving around_
 
 Also since not all the text has been done with rems and it's currently a mix of px and rems, some text is tiny while other text is huge. Based on this, do you think we should temporarily add the font-size in until we can attend to these?
 

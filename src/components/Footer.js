@@ -8,11 +8,11 @@ const Footer = () => {
       <div className={styles.container}>
         <div className="pixel-transition" />
         <div className="content content_sm">
-          <h2>Get in touch</h2>
+          <h2>Contact</h2>
           <p>
-            Interested in something lorem ipsum dolor
+            Want to get in touch?
             <br />
-            Two lines looked real nice didn't it
+            Please drop me an email.
           </p>
           <ButtonList>
             <Button href="https://www.raildiary.com/en" title="Send email" />

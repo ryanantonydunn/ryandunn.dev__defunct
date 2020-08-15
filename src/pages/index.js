@@ -15,7 +15,7 @@ const projects = [
   {
     title: "Raildiary",
     description:
-      "Sitediary is project management software for the Rail Construction industry. I worked on yadda yadda yadda.",
+      "Raildiary makes project management software for the Rail Construction industry. I have worked with the team at Raildiary for over a year on their mobile and web platforms.",
     image: "raildiary.svg",
     imageClass: "pl-2 pr-2",
     primaryLink: "https://www.raildiary.com/en",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "MyDailyTracker",
     description:
-      "Sitediary is project management software for the Rail Construction industry. I worked on yadda yadda yadda.",
+      "MyDailyTracker is a fully-customisable mood and habit tracking app aimed at improving mental health and wellbeing through self-reflection. I am the founder and sole developer of the project.",
     image: "mydailytracker.png",
     primaryLink: "https://www.raildiary.com/en",
     primaryLinkText: "Visit Website",
@@ -32,7 +32,7 @@ const projects = [
   {
     title: "Project Ants",
     description:
-      "Sitediary is project management software for the Rail Construction industry. I worked on yadda yadda yadda.",
+      "Project Ants is a multiplayer action browser game with customisable physics, objects, weapons and randomly generated maps. This is a long-running personal project of mine.",
     image: "project-ants.png",
     secondaryLink: "https://www.raildiary.com/en",
     secondaryLinkText: "View Video",
@@ -52,7 +52,7 @@ const Index = ({ articles }) => {
             <h1 className="mb-2">Front End Developer & Designer</h1>
           </LoadFloater>
           <LoadFloater delay={300}>
-            <p>Solving problems with software since 2010</p>
+            <p>Solving problems with software since 2010.</p>
           </LoadFloater>
           <LoadFloater delay={450}>
             <div className={styles.splash_img}>
@@ -65,12 +65,15 @@ const Index = ({ articles }) => {
         <div className="pixel-transition" />
         <div className={styles.intro_content}>
           <LoadFloater delay={150}>
-            <h2 className="mb-6">Design & Development</h2>
+            <h2 className="mb-6">Featured Projects</h2>
           </LoadFloater>
           <LoadFloater delay={300}>
             <p>
-              On-the-ground problem solving in frontend development. Javascript,
-              React, React Native, CSS, UX, Accessibility.
+              Over the years I've worked on projects varying from e-commerce
+              web-apps to game development and construction project management
+              software. I've worked as part of a team delivering SAAS products,
+              as a freelance contractor and as a contributor to open source
+              projects.
             </p>
           </LoadFloater>
         </div>
