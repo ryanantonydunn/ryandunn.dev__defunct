@@ -1,21 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import shootyCanvasLetters, {
-  cancelShootyCanvasLetters,
-} from "../utils/ShootyCanvasLetters";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import shootyCanvasLetters from "../utils/ShootyCanvasLetters";
 import styles from "./Header.module.css";
-import SocialLinks from "./SocialLinks";
 import { getScroll } from "./LoadFloater";
+import SocialLinks from "./SocialLinks";
 
 const Header = () => {
   const { pathname } = useRouter();
 
   // canvas name
-  const canvas = useRef();
+  const canvasRef = useRef();
   useEffect(() => {
     shootyCanvasLetters({
-      canvas: canvas.current,
+      container: canvasRef.current,
       w: 300,
       h: 200,
       text: "Ryan Dunn",
@@ -25,10 +23,7 @@ const Header = () => {
       gap: 4,
       color: "56, 161, 105",
     });
-    return () => {
-      cancelShootyCanvasLetters(canvas.current);
-    };
-  }, []);
+  }, [pathname]);
 
   // show on scroll
   const lastScroll = useRef(getScroll());
@@ -50,7 +45,7 @@ const Header = () => {
       <header
         className={`${styles.container} ${show ? styles.show : styles.hide}`}
       >
-        <canvas ref={canvas} />
+        <div ref={canvasRef} />
         <nav className={styles.nav}>
           <Link href="/">
             <a className={pathname === "/" ? styles.active : ""}>Home</a>

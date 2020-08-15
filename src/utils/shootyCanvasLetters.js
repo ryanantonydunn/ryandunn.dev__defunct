@@ -56,11 +56,56 @@ const lineAnimation = (obj) => {
   return obj;
 };
 
-const ref = {};
+// draw an individual line
+const drawLine = (cont, x1, y1, x2, y2, col) => {
+  cont.beginPath();
+  cont.moveTo(x1, y1);
+  cont.lineTo(x2, y2);
+  cont.closePath();
+  cont.stroke();
+};
+
+// draw all letters
+const drawLetters = (canvas, cont, letters, color) => {
+  // fade out the previous canvas background
+  cont.clearRect(-1, -1, canvas.width + 2, canvas.height + 2);
+
+  // draw the letters
+  let animating = false;
+  letters.forEach((l) => {
+    if (!l.lines) return;
+    l.lines.forEach((line) => {
+      // increment shooting outward animation values
+      line.animation = lineAnimation(line.animation);
+
+      const { x1, y1, x2, y2, xSlide, ySlide, animation } = line;
+      const { distance } = animation;
+      // set line width if straight or diagonal
+      cont.lineWidth = x1 !== x2 && y1 !== y2 ? 0.5 : 1;
+      cont.strokeStyle = "rgba(0, 0, 0, 0.08)";
+      drawLine(cont, x1, y1, x2, y2);
+
+      const xx1 = x1 + xSlide * distance;
+      const yy1 = y1 + ySlide * distance;
+      const xx2 = x2 + xSlide * distance;
+      const yy2 = y2 + ySlide * distance;
+
+      cont.lineWidth = x1 !== x2 && y1 !== y2 ? 0.5 : 1;
+      cont.strokeStyle = `rgba(${color}, ${1 - distance / 100})`;
+      drawLine(cont, xx1, yy1, xx2, yy2);
+
+      // check for still running animations
+      if (line.animation.distance !== 0) {
+        animating = true;
+      }
+    });
+  });
+  return animating;
+};
 
 // do the shooty canvas letters
 const shootyCanvasLetters = ({
-  canvas,
+  container,
   w,
   h,
   text,
@@ -71,14 +116,17 @@ const shootyCanvasLetters = ({
   color,
 }) => {
   gap = gap || size / 2;
+  container.innerHTML = "";
+  const canvas = document.createElement("canvas");
   canvas.width = w;
   canvas.height = h;
+  container.appendChild(canvas);
   const cont = canvas.getContext("2d");
   cont.translate(0.5, 0.5); // crisper lines
 
-  // get offset of canvas
-  const rect = canvas.getBoundingClientRect();
-  const canvasOffset = { x: rect.left, y: rect.top };
+  // // get offset of canvas
+  // const rect = canvas.getBoundingClientRect();
+  // const canvasOffset = { x: rect.left, y: rect.top };
 
   // remove unauthorised letters
   const filteredText = [];
@@ -90,7 +138,6 @@ const shootyCanvasLetters = ({
   // set start position of text
   let x = xPos;
   if (xPos === undefined) {
-    const reducer = (count, l) => count + letterShapes[l].width;
     let blocks = 0;
     filteredText.forEach((letter) => {
       blocks += letterShapes[letter].width;
@@ -130,61 +177,18 @@ const shootyCanvasLetters = ({
     x += width * size + gap;
   });
 
-  // draw an individual line
-  const drawLine = (x1, y1, x2, y2, col) => {
-    cont.beginPath();
-    cont.moveTo(x1, y1);
-    cont.lineTo(x2, y2);
-    cont.closePath();
-    cont.stroke();
-  };
-
   // run every frame
+  let runFrame = true;
   const step = () => {
-    if (ref.runFrame) {
-      ref.runFrame = false;
-
-      // fade out the previous canvas background
-      cont.clearRect(-1, -1, canvas.width + 2, canvas.height + 2);
-
-      // draw the letters
-      letters.forEach((l) => {
-        if (!l.lines) return;
-        l.lines.forEach((line) => {
-          // increment shooting outward animation values
-          line.animation = lineAnimation(line.animation);
-
-          const { x1, y1, x2, y2, xSlide, ySlide, animation } = line;
-          const { distance } = animation;
-          // set line width if straight or diagonal
-          cont.lineWidth = x1 !== x2 && y1 !== y2 ? 0.5 : 1;
-          cont.strokeStyle = "rgba(0, 0, 0, 0.08)";
-          drawLine(x1, y1, x2, y2);
-
-          const xx1 = x1 + xSlide * distance;
-          const yy1 = y1 + ySlide * distance;
-          const xx2 = x2 + xSlide * distance;
-          const yy2 = y2 + ySlide * distance;
-
-          cont.lineWidth = x1 !== x2 && y1 !== y2 ? 0.5 : 1;
-          cont.strokeStyle = `rgba(${color}, ${1 - distance / 100})`;
-          drawLine(xx1, yy1, xx2, yy2);
-
-          // check for still running animations
-          if (line.animation.distance !== 0) {
-            ref.runFrame = true;
-          }
-        });
-      });
+    if (runFrame) {
+      runFrame = drawLetters(canvas, cont, letters, color);
     }
     window.requestAnimationFrame(step);
   };
+  window.requestAnimationFrame(step);
 
-  ref.runFrame = true;
-  ref.frame = window.requestAnimationFrame(step);
-
-  // move the mouse
-  const mouseMove = (x, y) => {
+  // shoot a letter when touched
+  const checkShootOut = (x, y) => {
     letters.forEach((l) => {
       const lx = l.x;
       const ly = l.y;
@@ -197,26 +201,21 @@ const shootyCanvasLetters = ({
             delay++;
           }
         });
-        ref.runFrame = true;
+        runFrame = true;
       }
     });
   };
 
-  ref.mouseMove = (e) => {
-    mouseMove(e.offsetX, e.offsetY);
+  const mouseMove = (e) => {
+    checkShootOut(e.offsetX, e.offsetY);
   };
 
-  ref.touchMove = (e) => {
-    mouseMove(e.touches[0].offsetX, e.touches[0].offsetY);
+  const touchMove = (e) => {
+    checkShootOut(e.touches[0].offsetX, e.touches[0].offsetY);
   };
 
-  canvas.addEventListener("mousemove", ref.mouseMove);
-  canvas.addEventListener("touchstart", ref.touchMove);
-};
-
-export const cancelShootyCanvasLetters = (canvas) => {
-  canvas.removeEventListener("mousemove", ref.mouseMove);
-  canvas.removeEventListener("touchstart", ref.touchMove);
+  canvas.addEventListener("mousemove", mouseMove);
+  canvas.addEventListener("touchstart", touchMove);
 };
 
 export default shootyCanvasLetters;
