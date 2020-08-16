@@ -1,7 +1,5 @@
-import format from "date-fns/format";
 import ReactMarkdown from "react-markdown";
 import {
-  ArticleHero,
   ArticleMeta,
   getArticle,
   getArticles,
@@ -9,6 +7,9 @@ import {
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Meta from "../../components/Meta";
+
+import { PrismAsync } from "react-syntax-highlighter";
+import vscDarkPlus from "./vsc-dark-plus";
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();
@@ -31,6 +32,12 @@ const renderParagraph = ({ children }) =>
     <p>{children}</p>
   );
 
+const renderCode = ({ language, value }) => (
+  <PrismAsync language={language} style={vscDarkPlus}>
+    {value}
+  </PrismAsync>
+);
+
 const BlogTemplate = ({ body, metaData }) => {
   return (
     <>
@@ -50,6 +57,7 @@ const BlogTemplate = ({ body, metaData }) => {
             source={body}
             renderers={{
               paragraph: renderParagraph,
+              code: renderCode,
             }}
           />
         </article>

@@ -97,9 +97,25 @@ p {
     @apply mb-8 ml-12 mr-12;
   }
 
+  ol {
+    @apply text-lg list-decimal;
+    @apply mb-8 ml-12 mr-12;
+  }
+
+  pre {
+    @apply p-8 pl-10 mb-8 mt-8;
+    @apply rounded-md;
+  }
+
   p {
     @apply text-lg;
     @apply mb-8 ml-12 mr-12;
+
+    code {
+      font-size: 0.9em;
+      padding: 0.1em 0.3em;
+      @apply bg-gray-300 text-gray-800;
+    }
   }
 
   .img {
