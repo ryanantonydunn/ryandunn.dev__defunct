@@ -131,4 +131,4 @@ Resulting in this:
 
 ![Setting up Tailwind CSS with Create React App and nesting](https://dev-to-uploads.s3.amazonaws.com/i/hxfwi50me7wxpqgjfv9p.png)
 
-And that's it. This is definitely my new favourite way to do styling in React.
+And that's it. This is definitely my new favourite way to do styling in React. [Go to the repo](https://github.com/ryanantonydunn/cra-postcss-tailwind)
