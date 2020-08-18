@@ -1,5 +1,5 @@
 # Ryan Dunn
 
-Personal website of software developer Ryan Dunn
+Personal website of front end developer and designer Ryan Dunn
 
 https://ryandunn.dev

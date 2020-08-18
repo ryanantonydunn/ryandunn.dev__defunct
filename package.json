@@ -1,13 +1,14 @@
 {
   "name": "ryandunn.dev",
-  "description": "Personal website of software developer Ryan Dunn",
+  "description": "Personal website of front end developer and designer Ryan Dunn",
   "version": "0.1.0",
   "author": "ryanantonydunn",
   "scripts": {
     "dev": "next",
     "develop": "yarn dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "yarn build && yarn export"
   },
   "dependencies": {
     "date-fns": "^2.15.0",
@@ -17,6 +18,7 @@
     "raw-loader": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
     "react-icons": "^3.10.0",
     "react-markdown": "^4.3.1",
     "react-syntax-highlighter": "^13.4.0",

@@ -26,7 +26,7 @@ const projects = [
     description:
       "MyDailyTracker is a fully-customisable mood and habit tracking app aimed at improving mental health and wellbeing through self-reflection. I am the founder and sole developer of the project.",
     image: "mydailytracker.png",
-    primaryLink: "https://www.raildiary.com/en",
+    primaryLink: "disabled",
     primaryLinkText: "Visit Website",
   },
   {
@@ -34,9 +34,9 @@ const projects = [
     description:
       "Project Ants is a multiplayer action browser game with customisable physics, objects, weapons and randomly generated maps. This is a long-running personal project of mine.",
     image: "project-ants.png",
-    secondaryLink: "https://www.raildiary.com/en",
+    secondaryLink: "https://www.youtube.com/watch?v=7dCMg6u2Qug",
     secondaryLinkText: "View Video",
-    primaryLink: "https://www.raildiary.com/en",
+    primaryLink: "https://projectants.ryandunn.dev",
     primaryLinkText: "Play Demo",
   },
 ];
