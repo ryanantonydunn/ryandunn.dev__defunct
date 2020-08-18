@@ -9,7 +9,7 @@ import Header from "../../components/Header";
 import Meta from "../../components/Meta";
 
 import { PrismAsync } from "react-syntax-highlighter";
-import vscDarkPlus from "./vsc-dark-plus";
+import vscDarkPlus from "../../utils/vsc-dark-plus";
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();
