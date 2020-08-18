@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import shootyCanvasLetters from "../utils/ShootyCanvasLetters";
+import shootyCanvasLetters from "../utils/shootyCanvasLetters";
 import styles from "./Header.module.css";
 import { getScroll } from "./LoadFloater";
 import SocialLinks from "./SocialLinks";
