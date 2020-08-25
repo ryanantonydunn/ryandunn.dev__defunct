@@ -16,8 +16,8 @@ const MailingList = () => {
       method: "POST",
     })
       .then((res) => res.json())
-      .then(({ error }) => {
-        if (error) {
+      .then((res) => {
+        if (res.error) {
           setMessage("");
           setError(error);
         } else {
@@ -27,7 +27,7 @@ const MailingList = () => {
       })
       .catch((err) => {
         setMessage("");
-        setError(err);
+        setError(err.message);
       })
       .finally(() => {
         setLoading(false);
