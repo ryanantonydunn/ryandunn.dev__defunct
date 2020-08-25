@@ -80,6 +80,10 @@ h3 {
   }
 }
 
+h4 {
+  @apply text-xl font-bold tracking-tight leading-snug;
+}
+
 p {
   @screen lg {
     @apply text-lg;
@@ -146,4 +150,9 @@ p {
   tr:nth-child(even) td {
     @apply bg-gray-100;
   }
+}
+
+.off-screen {
+  position: absolute;
+  left: -5000px;
 }

@@ -1,6 +1,7 @@
 import ArticleList, { getArticles } from "../components/ArticleList";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import MailingList from "../components/MailingList";
 import Meta from "../components/Meta";
 
 export const getStaticProps = async () => {
@@ -25,6 +26,7 @@ const Blog = ({ articles }) => {
         </p>
       </div>
       <ArticleList articles={articles} />
+      <MailingList />
       <Footer />
     </>
   );

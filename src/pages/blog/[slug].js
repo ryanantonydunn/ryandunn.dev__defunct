@@ -10,6 +10,7 @@ import Meta from "../../components/Meta";
 
 import { PrismAsync } from "react-syntax-highlighter";
 import vscDarkPlus from "../../utils/vsc-dark-plus";
+import MailingList from "../../components/MailingList";
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();
@@ -62,6 +63,7 @@ const BlogTemplate = ({ body, metaData }) => {
           />
         </article>
       </div>
+      <MailingList />
       <Footer />
     </>
   );
