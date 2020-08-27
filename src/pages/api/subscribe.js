@@ -1,41 +1,31 @@
+import mailchimp from "@mailchimp/mailchimp_marketing";
+
+const apiKey = process.env.MAILCHIMP_API_KEY;
+const server = apiKey.split("-")[1];
+mailchimp.setConfig({ apiKey, server });
+
+const listId = process.env.MAILCHIMP_LIST_ID;
+
 export default async (req, res) => {
   const { email } = req.body;
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
 
-  try {
-    const LIST_ID = process.env.MAILCHIMP_LIST_ID;
-    const API_KEY = process.env.MAILCHIMP_API_KEY;
-    // API keys are in the form <key>-us3.
-    const DATACENTER = API_KEY.split("-")[1];
-
-    // The status of 'subscribed' is equivalent to a double opt-in.
-    const data = {
-      email_address: email,
-      status: "subscribed",
-    };
-
-    const response = await fetch(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`,
-      {
-        body: JSON.stringify(data),
-        headers: {
-          Authorization: `apikey ${API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      }
-    );
-    if (response.status >= 400) {
-      console.log(response.status);
-      return res.status(400).json({
-        error: `There was an error subscribing to the newsletter. Send me an email at contact@ryandunn.dev and I'll add you to the list.`,
+  return new Promise((reject, resolve) => {
+    mailchimp.lists
+      .addListMember(listId, {
+        email_address: email,
+        status: "subscribed",
+      })
+      .then(() => {
+        res.status(201).json({ error: "" });
+        resolve();
+      })
+      .catch((err) => {
+        const { status, detail } = err.response.body;
+        res.status(status).json({ error: detail });
+        resolve();
       });
-    }
-
-    return res.status(201).json({ error: "" });
-  } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() });
-  }
+  });
 };

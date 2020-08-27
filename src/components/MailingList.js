@@ -19,7 +19,7 @@ const MailingList = () => {
       .then((res) => {
         if (res.error) {
           setMessage("");
-          setError(error);
+          setError(res.error);
         } else {
           setError("");
           setMessage("Successfully subscribed!");
@@ -39,7 +39,7 @@ const MailingList = () => {
       <div className={styles.box}>
         <div className="md:flex md:flex-row items-center justify-between">
           <h4>Get updates directly</h4>
-          <p className="text-sm">*Nothing but post updates. Ever.</p>
+          <p className="text-sm">*No nonsense, no spam, just content.</p>
         </div>
         {error && <div className={styles.error}>{error}</div>}
         {message && <div className={styles.message}>{message}</div>}
