@@ -216,6 +216,7 @@ const shootyCanvasLetters = ({
 
   canvas.addEventListener("mousemove", mouseMove);
   canvas.addEventListener("touchstart", touchMove);
+  canvas.addEventListener("touchmove", touchMove);
 };
 
 export default shootyCanvasLetters;

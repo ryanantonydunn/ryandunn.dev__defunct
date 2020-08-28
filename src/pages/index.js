@@ -64,67 +64,54 @@ const Index = ({ articles }) => {
       <div className={styles.intro}>
         <div className="pixel-transition" />
         <div className={styles.intro_content}>
-          <LoadFloater delay={150}>
-            <h2 className="mb-6">Featured Projects</h2>
-          </LoadFloater>
-          <LoadFloater delay={300}>
-            <p>
-              Over the years I've worked on projects varying from e-commerce
-              web-apps to game development and construction project management
-              software. I've worked as part of a team delivering SAAS products,
-              as a freelance contractor and as a contributor to open source
-              projects.
-            </p>
-          </LoadFloater>
+          <h2 className="mb-6">Featured Projects</h2>
+          <p>
+            Over the years I've worked on projects varying from e-commerce
+            web-apps to game development and construction project management
+            software. I've worked as part of a team delivering SAAS products, as
+            a freelance contractor and as a contributor to open source projects.
+          </p>
         </div>
       </div>
       <div className={styles.projects}>
         {projects.map((p, i) => (
           <div key={i} className={styles.project}>
-            <LoadFloater delay={150 + i * 150}>
-              <div className={styles.project_inner}>
-                <div className={styles.project_image}>
-                  <img
-                    className={p.imageClass || ""}
-                    src={`/static/images/${p.image}`}
-                    alt={`/static/images/${p.title}`}
-                  />
-                </div>
-                <p>{p.description}</p>
-                <ButtonList>
-                  {p.secondaryLink && (
-                    <Button
-                      secondary
-                      href={p.secondaryLink}
-                      title={p.secondaryLinkText}
-                    />
-                  )}
-                  {p.primaryLink && (
-                    <Button href={p.primaryLink} title={p.primaryLinkText} />
-                  )}
-                </ButtonList>
+            <div className={styles.project_inner}>
+              <div className={styles.project_image}>
+                <img
+                  className={p.imageClass || ""}
+                  src={`/static/images/${p.image}`}
+                  alt={`/static/images/${p.title}`}
+                />
               </div>
-            </LoadFloater>
+              <p>{p.description}</p>
+              <ButtonList>
+                {p.secondaryLink && (
+                  <Button
+                    secondary
+                    href={p.secondaryLink}
+                    title={p.secondaryLinkText}
+                  />
+                )}
+                {p.primaryLink && (
+                  <Button href={p.primaryLink} title={p.primaryLinkText} />
+                )}
+              </ButtonList>
+            </div>
           </div>
         ))}
       </div>
 
       <div className={styles.articles}>
-        <LoadFloater delay={150}>
-          <h2>Latest Articles</h2>
-        </LoadFloater>
-        <LoadFloater delay={300}>
-          <p>
-            On-the-ground problem solving in frontend development.
-            <br />
-            Javascript, React, React Native, CSS, UX, Accessibility.
-          </p>
-        </LoadFloater>
-        <LoadFloater delay={450}>
-          <p className={styles.articles_buttons}>
-            <Button href="/blog" title="View all articles" />
-          </p>
-        </LoadFloater>
+        <h2>Latest Articles</h2>
+        <p>
+          On-the-ground problem solving in frontend development.
+          <br />
+          Javascript, React, React Native, CSS, UX, Accessibility.
+        </p>
+        <p className={styles.articles_buttons}>
+          <Button href="/blog" title="View all articles" />
+        </p>
         <ArticleList articles={articles.slice(0, 3)} />
       </div>
       <Footer />

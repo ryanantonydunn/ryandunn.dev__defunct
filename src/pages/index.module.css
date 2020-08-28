@@ -36,13 +36,13 @@
   @apply text-white text-center;
 
   &_content {
-    @apply ml-auto mr-auto pt-16 pb-8 pl-2 pr-2;
+    @apply ml-auto mr-auto pt-16 pb-8 pl-4 pr-4;
     max-width: 640px;
   }
 }
 
 .projects {
-  @apply ml-2 mr-2 mb-8;
+  @apply ml-4 mr-4 mb-8;
   @apply bg-white rounded-lg shadow-md;
   @apply border border-gray-200;
   margin-top: -280px;
@@ -89,7 +89,7 @@
 }
 
 .articles {
-  @apply mt-20;
+  @apply mt-20 pr-4 pl-4;
 
   h2 {
     @apply mb-8 text-center;
