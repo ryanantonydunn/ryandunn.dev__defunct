@@ -92,8 +92,6 @@ const projects = [
   },
 ];
 
-console.log(projects);
-
 const Index = ({ articles }) => {
   return (
     <>
