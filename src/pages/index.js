@@ -14,8 +14,27 @@ export const getStaticProps = async () => {
 const projects = [
   {
     title: "Raildiary",
-    description:
-      "Raildiary makes project management software for the Rail Construction industry. I have worked with the team at Raildiary for over a year on their mobile and web platforms.",
+    description: (
+      <>
+        <p>
+          Raildiary makes market leading software for the Rail Construction
+          industry. Some of my contributions to the platform include:
+        </p>
+        <ul>
+          <li>
+            Major refactor of all UI components in a large React Native app
+          </li>
+          <li>
+            Large scale data import feature used to import thousands of
+            construction records into a bespoke system every week
+          </li>
+          <li>
+            Major refactor of the UI component library to meet accessibility
+            standards in a large React web-app
+          </li>
+        </ul>
+      </>
+    ),
     image: "raildiary.svg",
     imageClass: "pl-2 pr-2",
     primaryLink: "https://www.raildiary.com/en",
@@ -23,16 +42,48 @@ const projects = [
   },
   {
     title: "MyDailyTracker",
-    description:
-      "MyDailyTracker is a fully-customisable mood and habit tracking app aimed at improving mental health and wellbeing through self-reflection. I am the founder and sole developer of the project.",
+    description: (
+      <>
+        <p>
+          MyDailyTracker is a fully-customisable mood and habit tracking app
+          aimed at improving mental health and wellbeing through
+          self-reflection. I am the founder of the project.
+        </p>
+        <ul>
+          <li>Customisable metrics and inputs to track personal data</li>
+          <li>
+            Securely encrypted personal data to meet GDRP to meet GDPR and HIPAA
+            standards
+          </li>
+          <li>
+            Data visualisation tools to gain personal insight from state of
+            mind, goals and activities
+          </li>
+        </ul>
+      </>
+    ),
     image: "mydailytracker.png",
     primaryLink: "disabled",
-    primaryLinkText: "Visit Website",
+    primaryLinkText: "Not available",
   },
   {
     title: "Project Ants",
-    description:
-      "Project Ants is a multiplayer action browser game with customisable physics, objects, weapons and randomly generated maps. This is a long-running personal project of mine.",
+    description: (
+      <>
+        <p>
+          Project Ants is a multiplayer action browser game. This is a
+          long-running personal project of mine.
+        </p>
+        <ul>
+          <li>Custom collision engine</li>
+          <li>Large customisability of objects and weapons</li>
+          <li>Multiplayer capable with a node server architecture</li>
+          <li>Image based maps that can be customised</li>
+          <li>Procedurally generated random maps</li>
+          <li>Map based gravity</li>
+        </ul>
+      </>
+    ),
     image: "project-ants.png",
     secondaryLink: "https://www.youtube.com/watch?v=7dCMg6u2Qug",
     secondaryLinkText: "View Video",
@@ -40,6 +91,8 @@ const projects = [
     primaryLinkText: "Play Demo",
   },
 ];
+
+console.log(projects);
 
 const Index = ({ articles }) => {
   return (
@@ -65,12 +118,6 @@ const Index = ({ articles }) => {
         <div className="pixel-transition" />
         <div className={styles.intro_content}>
           <h2 className="mb-6">Featured Projects</h2>
-          <p>
-            Over the years I've worked on projects varying from e-commerce
-            web-apps to game development and construction project management
-            software. I've worked as part of a team delivering SAAS products, as
-            a freelance contractor and as a contributor to open source projects.
-          </p>
         </div>
       </div>
       <div className={styles.projects}>
@@ -84,7 +131,7 @@ const Index = ({ articles }) => {
                   alt={`/static/images/${p.title}`}
                 />
               </div>
-              <p>{p.description}</p>
+              {p.description}
               <ButtonList>
                 {p.secondaryLink && (
                   <Button
@@ -94,7 +141,11 @@ const Index = ({ articles }) => {
                   />
                 )}
                 {p.primaryLink && (
-                  <Button href={p.primaryLink} title={p.primaryLinkText} />
+                  <Button
+                    disabled={p.primaryLink === "disabled"}
+                    href={p.primaryLink}
+                    title={p.primaryLinkText}
+                  />
                 )}
               </ButtonList>
             </div>

@@ -7,18 +7,41 @@ export const ButtonList = ({ children }) => (
   <div className={styles.list}>{children}</div>
 );
 
-const Button = ({ secondary, href, onClick, title, icon = MdArrowForward }) => {
-  return href ? (
-    <Link href="/blog">
-      <a className={`${styles.button} ${secondary && styles.secondary}`}>
+const Button = ({
+  secondary,
+  href,
+  onClick,
+  title,
+  icon = MdArrowForward,
+  disabled,
+}) => {
+  const isExternalLink = href && href.startsWith("http");
+  return disabled ? (
+    <div className={`${styles.button} ${styles.disabled}`}>
+      {title}
+      {icon && React.createElement(icon)}
+    </div>
+  ) : href ? (
+    isExternalLink ? (
+      <a
+        href={href}
+        className={`${styles.button} ${secondary ? styles.secondary : ""}`}
+      >
         {title}
         {icon && React.createElement(icon)}
       </a>
-    </Link>
+    ) : (
+      <Link href={href}>
+        <a className={`${styles.button} ${secondary ? styles.secondary : ""}`}>
+          {title}
+          {icon && React.createElement(icon)}
+        </a>
+      </Link>
+    )
   ) : (
     <button
       onClick={onClick}
-      className={`${styles.button} ${secondary && styles.secondary}`}
+      className={`${styles.button} ${secondary ? styles.secondary : ""}`}
     >
       {title}
       {icon && React.createElement(icon)}

@@ -90,20 +90,22 @@ p {
   }
 }
 
+ul {
+  @apply list-disc mb-4 ml-4;
+}
+
+li {
+  @apply mb-2;
+}
+
+ol {
+  @apply list-decimal mb-4 ml-4;
+}
+
 .article {
   h2,
   h3 {
     @apply mb-8 mt-10 ml-6 mr-6;
-  }
-
-  ul {
-    @apply text-lg list-disc;
-    @apply mb-8 ml-12 mr-12;
-  }
-
-  ol {
-    @apply text-lg list-decimal;
-    @apply mb-8 ml-12 mr-12;
   }
 
   pre {
@@ -120,6 +122,14 @@ p {
       padding: 0.1em 0.3em;
       @apply bg-gray-300 text-gray-800;
     }
+  }
+
+  ul {
+    @apply text-lg mb-8 ml-12 mr-12;
+  }
+
+  ol {
+    @apply text-lg mb-8 ml-12 mr-12;
   }
 
   .img {

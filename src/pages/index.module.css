@@ -61,12 +61,16 @@
   @apply border-b border-gray-200;
 
   &_inner {
-    @apply p-6 text-center;
+    @apply p-6;
     @apply ml-auto mr-auto;
     max-width: 420px;
   }
 
   p {
+    @apply mb-8;
+  }
+
+  ul {
     @apply mb-8;
   }
 

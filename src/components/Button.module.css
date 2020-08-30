@@ -17,6 +17,13 @@
   }
 }
 
+.disabled {
+  @apply border-gray-300 text-gray-300;
+  svg {
+    @apply text-gray-300;
+  }
+}
+
 .list {
   @apply flex flex-wrap justify-center;
   > a,
