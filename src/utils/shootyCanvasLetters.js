@@ -211,7 +211,11 @@ const shootyCanvasLetters = ({
   };
 
   const touchMove = (e) => {
-    checkShootOut(e.touches[0].offsetX, e.touches[0].offsetY);
+    const touch = e.touches[0] || e.changedTouches[0];
+    const { top, left } = e.target.getBoundingClientRect();
+    const x = touch.pageX - left;
+    const y = touch.pageY - top;
+    checkShootOut(x, y);
   };
 
   canvas.addEventListener("mousemove", mouseMove);
