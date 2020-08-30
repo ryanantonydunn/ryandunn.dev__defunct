@@ -11,12 +11,12 @@
 }
 
 .input {
-  @apply flex-1 bg-white p-3 w-32 rounded-md mr-2;
+  @apply w-full bg-white p-3 rounded-md mr-2 mb-2;
   @apply font-sans text-lg text-gray-700;
 }
 
 .btn {
-  @apply bg-green-500 p-3 pr-5 pl-5 rounded-md mr-2 text-white;
+  @apply w-full bg-green-500 p-3 pr-5 pl-5 rounded-md mr-2 text-white;
 }
 
 .error {
@@ -27,4 +27,14 @@
 .message {
   @apply bg-yellow-200 border-2 border-yellow-400 rounded-md text-left p-3 mb-4;
   border-style: dashed;
+}
+
+@screen sm {
+  .input {
+    @apply w-auto flex-1 mb-0;
+  }
+
+  .btn {
+    @apply w-auto;
+  }
 }

@@ -43,7 +43,7 @@ const MailingList = () => {
         </div>
         {error && <div className={styles.error}>{error}</div>}
         {message && <div className={styles.message}>{message}</div>}
-        <div className="flex flex-row">
+        <div className="sm:flex flex-row">
           <input
             type="email"
             value={email}
