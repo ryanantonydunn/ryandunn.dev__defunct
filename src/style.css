@@ -47,6 +47,10 @@ a {
   background-repeat: repeat-x;
 }
 
+.profile {
+  @apply w-40 h-40 rounded-full overflow-hidden;
+}
+
 h1 {
   @apply font-bold tracking-tight leading-tight text-2xl;
   @screen sm {
@@ -100,6 +104,10 @@ li {
 
 ol {
   @apply list-decimal mb-4 ml-4;
+}
+
+p {
+  @apply text-lg mb-8;
 }
 
 .article {

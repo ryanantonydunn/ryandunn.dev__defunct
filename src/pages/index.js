@@ -106,7 +106,7 @@ const Index = ({ articles }) => {
             <p>Solving problems with software since 2010.</p>
           </LoadFloater>
           <LoadFloater delay={450}>
-            <div className={styles.splash_img}>
+            <div className="profile">
               <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
             </div>
           </LoadFloater>

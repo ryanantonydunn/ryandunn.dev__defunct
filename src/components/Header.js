@@ -50,6 +50,11 @@ const Header = () => {
           <Link href="/">
             <a className={pathname === "/" ? styles.active : ""}>Home</a>
           </Link>
+          <Link href="/about">
+            <a className={pathname.startsWith("/about") ? styles.active : ""}>
+              About
+            </a>
+          </Link>
           <Link href="/blog">
             <a className={pathname.startsWith("/blog") ? styles.active : ""}>
               Blog

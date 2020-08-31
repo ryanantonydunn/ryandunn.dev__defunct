@@ -6,10 +6,6 @@
     @apply text-center;
   }
 
-  &_img {
-    @apply w-40 h-40 rounded-full overflow-hidden;
-  }
-
   p {
     @apply mb-6;
   }
