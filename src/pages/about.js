@@ -1,7 +1,7 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import LoadFloater from "../components/LoadFloater";
-import Meta from "../components/Meta";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
+import LoadFloater from "../components/load-floater/LoadFloater";
+import Meta from "../components/meta/Meta";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
-import SocialLinks from "./SocialLinks";
-import Button, { ButtonList } from "../components/Button";
+import SocialLinks from "../social-links/SocialLinks";
+import Button, { ButtonList } from "../../components/button/Button";
 
 const Footer = () => {
   return (

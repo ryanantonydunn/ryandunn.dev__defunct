@@ -1,9 +1,11 @@
-import ArticleList, { getArticles } from "../components/ArticleList";
-import Button, { ButtonList } from "../components/Button";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import LoadFloater from "../components/LoadFloater";
-import Meta from "../components/Meta";
+import ArticleList, {
+  getArticles,
+} from "../components/article-list/ArticleList";
+import Button, { ButtonList } from "../components/button/Button";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
+import LoadFloater from "../components/load-floater/LoadFloater";
+import Meta from "../components/meta/Meta";
 import styles from "./index.module.css";
 
 export const getStaticProps = async () => {

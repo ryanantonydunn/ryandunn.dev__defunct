@@ -1,19 +1,17 @@
 import ReactMarkdown from "react-markdown";
+import { PrismAsync } from "react-syntax-highlighter";
 import {
   ArticleMeta,
   getArticle,
   getArticles,
-} from "../../components/ArticleList";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Meta from "../../components/Meta";
-
-import { PrismAsync } from "react-syntax-highlighter";
+} from "../../components/article-list/ArticleList";
+import Author from "../../components/author/Author";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import MailingList from "../../components/mailing-list/MailingList";
+import Meta from "../../components/meta/Meta";
+import Share from "../../components/share/Share";
 import vscDarkPlus from "../../utils/vsc-dark-plus";
-import MailingList from "../../components/MailingList";
-import Author from "../../components/Author";
-import { FaReddit, FaTwitter } from "react-icons/fa";
-import Share from "../../components/Share";
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import shootyCanvasLetters from "../utils/shootyCanvasLetters";
+import shootyCanvasLetters from "../../utils/shootyCanvasLetters";
 import styles from "./Header.module.css";
-import { getScroll } from "./LoadFloater";
-import SocialLinks from "./SocialLinks";
+import { getScroll } from "../load-floater/LoadFloater";
+import SocialLinks from "../social-links/SocialLinks";
 
 const Header = () => {
   const { pathname } = useRouter();

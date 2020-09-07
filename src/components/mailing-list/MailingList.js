@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./MailingList.module.css";
-import SpinnerOverlay from "./SpinnerOverlay";
+import SpinnerOverlay from "../spinner-overlay/SpinnerOverlay";
 
 const MailingList = ({ className }) => {
   const [email, setEmail] = useState("");

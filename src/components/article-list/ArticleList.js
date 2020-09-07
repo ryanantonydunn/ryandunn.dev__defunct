@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import styles from "./ArticleList.module.css";
 
 export const getArticles = async () => {
-  const files = await require.context("../articles", true, /\.md$/);
+  const files = await require.context("../../articles", true, /\.md$/);
   const values = files.keys().map(files);
   const articles = values
     .map((value) => {

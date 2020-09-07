@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SpinnerOverlay.module.css";
 
-export default function SpinnerOverlay({ children, active }) {
+const SpinnerOverlay = ({ children, active }) => {
   return (
     <div className={styles.overlay}>
       <div
@@ -34,4 +34,6 @@ export default function SpinnerOverlay({ children, active }) {
       )}
     </div>
   );
-}
+};
+
+export default SpinnerOverlay;

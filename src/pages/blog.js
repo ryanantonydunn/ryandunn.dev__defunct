@@ -1,8 +1,10 @@
-import ArticleList, { getArticles } from "../components/ArticleList";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import MailingList from "../components/MailingList";
-import Meta from "../components/Meta";
+import ArticleList, {
+  getArticles,
+} from "../components/article-list/ArticleList";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
+import MailingList from "../components/mailing-list/MailingList";
+import Meta from "../components/meta/Meta";
 
 export const getStaticProps = async () => {
   const articles = await getArticles();
