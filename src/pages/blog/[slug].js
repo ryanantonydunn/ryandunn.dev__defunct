@@ -11,6 +11,9 @@ import Meta from "../../components/Meta";
 import { PrismAsync } from "react-syntax-highlighter";
 import vscDarkPlus from "../../utils/vsc-dark-plus";
 import MailingList from "../../components/MailingList";
+import Author from "../../components/Author";
+import { FaReddit, FaTwitter } from "react-icons/fa";
+import Share from "../../components/Share";
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();
@@ -63,7 +66,16 @@ const BlogTemplate = ({ body, metaData }) => {
           />
         </article>
       </div>
-      <MailingList />
+
+      <div className="content content_sm mt-16 mb-16 pt-8 border-t border-gray-200">
+        <Share
+          url={encodeURIComponent(`https://ryandunn.dev/blog/${metaData.slug}`)}
+          className="mb-8"
+        />
+        <Author className="mb-8" />
+        <MailingList />
+      </div>
+
       <Footer />
     </>
   );

@@ -25,7 +25,9 @@ const Blog = ({ articles }) => {
           Javascript, React, React Native, CSS, UX, Accessibility.
         </p>
       </div>
-      <ArticleList articles={articles} />
+      <div className="content content_lg">
+        <ArticleList articles={articles} />
+      </div>
       <MailingList />
       <Footer />
     </>

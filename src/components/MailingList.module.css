@@ -1,4 +1,4 @@
-.box {
+.container {
   @apply p-6 rounded-lg text-center;
   @apply bg-green-200 border-2 border-green-300;
   border-style: dashed;

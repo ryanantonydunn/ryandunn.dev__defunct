@@ -13,7 +13,7 @@ body {
 }
 
 .content {
-  @apply ml-auto mr-auto pl-2 pr-2;
+  @apply ml-auto mr-auto pr-4 pl-4;
   max-width: 960px;
   &_sm {
     max-width: 720px;
@@ -49,6 +49,9 @@ a {
 
 .profile {
   @apply w-40 h-40 rounded-full overflow-hidden;
+  &_sm {
+    @apply w-20 h-20 rounded-full overflow-hidden;
+  }
 }
 
 h1 {
