@@ -30,7 +30,9 @@ const Blog = ({ articles }) => {
       <div className="content content_lg">
         <ArticleList articles={articles} />
       </div>
-      <MailingList />
+      <div className="content content_sm">
+        <MailingList />
+      </div>
       <Footer />
     </>
   );
