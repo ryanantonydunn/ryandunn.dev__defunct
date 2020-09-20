@@ -4,6 +4,7 @@ date: "2020-02-11T00:00:00.000Z"
 title: "Using my command history to decide some aliases"
 description: "Today I finally decided to set up some aliases to make my life easier in the terminal, however I was not so sure what would be most useful for me."
 slug: "using-my-command-history-to-decide-some-aliases"
+readTime: "4 min read"
 ---
 
 Today I finally decided to set up some aliases to make my life easier in the terminal, however I was not so sure what would be most useful for me. There are a lot of resources out there with collections of aliases, but everyone's workflow is different - plus there are commands that I use just for the project I'm currently working on.

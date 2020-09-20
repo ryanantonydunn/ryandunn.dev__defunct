@@ -4,6 +4,7 @@ date: "2020-07-04T23:00:00.000Z"
 title: "How to use Tailwind with Create React App and PostCSS with no hassle"
 description: "I really like styled components and CSS in JS in general, but this has quickly overtaken as my favourite way to do styling in React."
 slug: "how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle"
+readTime: "3 min read"
 ---
 
 I really like styled components and CSS in JS in general, but this has quickly overtaken as my favourite way to do styling in React. It took a little while to figure out the configuration so I'm going to share that here.

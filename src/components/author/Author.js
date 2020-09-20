@@ -5,7 +5,7 @@ const Author = ({ className }) => {
   return (
     <div className={`flex flex-row items-center ${className}`}>
       <div className="profile profile_sm">
-        <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
+        <img src="/static/images/ryandunn.webp" alt="Ryan Dunn" />
       </div>
       <div className="flex-1 ml-6">
         <p className="text-sm mb-0">

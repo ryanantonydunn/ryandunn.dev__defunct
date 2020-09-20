@@ -39,7 +39,7 @@ const Apps = () => {
           <section></section>
         ))}
         <div>
-          <img src="/static/images/project-ants.png" alt="Project Ants" />
+          <img src="/static/images/project-ants.webp" alt="Project Ants" />
           <h3>Project Ants</h3>
           <p></p>
           <div className="buttons">
@@ -62,7 +62,7 @@ const Apps = () => {
         </div>
         <div>
           <a href="http://ryanantonydunn.github.io/get-to-ten/">
-            <img src="/static/images/project-gettoten.png" alt="Get To Ten" />
+            <img src="/static/images/project-gettoten.webp" alt="Get To Ten" />
           </a>
           <h3>Get To Ten</h3>
           <p>Mobile and web game to combine tiles and get a larger number</p>

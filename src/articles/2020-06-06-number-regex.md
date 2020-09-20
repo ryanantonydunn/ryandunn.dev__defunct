@@ -4,6 +4,7 @@ date: "2020-05-06T23:00:00.000Z"
 title: "In search of the ultimate number regex"
 description: "Doing perfect numerical validation using a single regex."
 slug: "in-search-of-the-ultimate-number-regex"
+readTime: "4 min read"
 ---
 
 I was recently working on a number input field and ran into the age old problem of validating the user input to ensure a valid numerical value. This is simple enough to just validate once the complete value is inputted, but not so much while the user is still typing.

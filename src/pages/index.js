@@ -64,7 +64,7 @@ const projects = [
         </ul>
       </>
     ),
-    image: "mydailytracker.png",
+    image: "mydailytracker.webp",
     primaryLink: "disabled",
     primaryLinkText: "Not available",
   },
@@ -86,7 +86,7 @@ const projects = [
         </ul>
       </>
     ),
-    image: "project-ants.png",
+    image: "project-ants.webp",
     secondaryLink: "https://www.youtube.com/watch?v=7dCMg6u2Qug",
     secondaryLinkText: "View Video",
     primaryLink: "https://projectants.ryandunn.dev",
@@ -109,7 +109,7 @@ const Index = ({ articles }) => {
           </LoadFloater>
           <LoadFloater delay={450}>
             <div className="profile">
-              <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
+              <img src="/static/images/ryandunn.webp" alt="Ryan Dunn" />
             </div>
           </LoadFloater>
         </div>

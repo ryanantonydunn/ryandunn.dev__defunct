@@ -15,7 +15,7 @@ const About = () => {
         </p>
         <LoadFloater delay={450}>
           <div className="profile ml-auto mr-auto mb-8 mt-8">
-            <img src="/static/images/ryandunn.jpg" alt="Ryan Dunn" />
+            <img src="/static/images/ryandunn.webp" alt="Ryan Dunn" />
           </div>
         </LoadFloater>
         <p>

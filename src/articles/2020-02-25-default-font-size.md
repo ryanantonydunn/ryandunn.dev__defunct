@@ -4,6 +4,7 @@ date: "2020-02-25T00:00:00.000Z"
 title: "Should we set a default font-size? Ideals and practicalities"
 description: "Most web browsers have a setting to customise what the default font size is. This can be used by visually impaired users to increase readability."
 slug: "should-we-set-a-default-font-size-ideals-and-practicalities"
+readTime: "7 min read"
 ---
 
 Recently I had quite a productive conversation about default font sizes in browsers in a PR comment section. I thought I would preserve the outcome here for later reference.
@@ -12,12 +13,12 @@ Recently I had quite a productive conversation about default font sizes in brows
 
 Most web browsers have a setting to customise what the default font size is. This can be used by visually impaired users to increase readability and comfort.
 
-![Chrome default font settings](../static/blog-images/chrome-default-font-settings.jpg)
+![Chrome default font settings](../static/blog-images/chrome-default-font-settings.webp)
 _Chrome default font settings_
 
 This can present challenges to developers with having the layout support a wide variety of text sizes while still being usable and presentable. This gets more challenging the more complex the website or web-app is. A lot of developers opt to set the font size explicitly, effectively disabling this feature. Including Google and Facebook.
 
-![Google body tag font settings](../static/blog-images/google-body-tag-font-settings.jpg)
+![Google body tag font settings](../static/blog-images/google-body-tag-font-settings.webp)
 _Google body tag font settings_
 
 Opinions on best practices here vary. Some say it’s better to have the browser zoom feature handle all font increases, preserving the layout. Some that the feature allows people to choose the method that most suits them. Even the accessibility specifications are quite vague on this.
