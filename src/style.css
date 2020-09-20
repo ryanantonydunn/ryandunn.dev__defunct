@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,300,600");
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,300,600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,9 +48,9 @@ a {
 }
 
 .profile {
-  @apply w-40 h-40 rounded-full overflow-hidden;
+  @apply w-32 rounded-full overflow-hidden;
   &_sm {
-    @apply w-20 h-20 rounded-full overflow-hidden;
+    @apply w-16 rounded-full overflow-hidden;
   }
 }
 

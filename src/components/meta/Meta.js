@@ -17,7 +17,7 @@ export default function Meta({
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="Description" content={description}></meta>
-      <link rel="shortcut icon" href="/static/favicon.png" />
+      <link rel="shortcut icon" href="/static/favicon.webp" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" key="twcard" />

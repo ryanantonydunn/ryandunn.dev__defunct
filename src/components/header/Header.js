@@ -35,7 +35,7 @@ const Header = () => {
       lastScroll.current = scroll;
     };
     setHeaderShow();
-    window.addEventListener("scroll", setHeaderShow);
+    window.addEventListener("scroll", setHeaderShow, { passive: true });
     return () => window.removeEventListener("scroll", setHeaderShow);
   }, []);
 

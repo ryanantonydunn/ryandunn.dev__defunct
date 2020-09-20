@@ -23,7 +23,7 @@ if (typeof window !== "undefined") {
       }
     );
   };
-  window.addEventListener("scroll", checkListeners);
+  window.addEventListener("scroll", checkListeners, { passive: true });
 }
 
 const LoadFloater = ({ delay = 0, children, className }) => {

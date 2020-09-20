@@ -18,7 +18,7 @@
 }
 
 .disabled {
-  @apply border-gray-300 text-gray-300;
+  @apply border-gray-300 text-gray-600;
   svg {
     @apply text-gray-300;
   }

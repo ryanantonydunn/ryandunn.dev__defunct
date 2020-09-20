@@ -219,8 +219,8 @@ const shootyCanvasLetters = ({
   };
 
   canvas.addEventListener("mousemove", mouseMove);
-  canvas.addEventListener("touchstart", touchMove);
-  canvas.addEventListener("touchmove", touchMove);
+  canvas.addEventListener("touchstart", touchMove, { passive: true });
+  canvas.addEventListener("touchmove", touchMove, { passive: true });
 };
 
 export default shootyCanvasLetters;

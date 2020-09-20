@@ -30,10 +30,9 @@ export const ArticleHero = ({ metaData }) => (
 
 export const ArticleMeta = ({ metaData }) => (
   <div className={styles.meta}>
-    <span className="text-gray-700">
-      {format(new Date(metaData.date), "MMMM d, yyyy")}
-    </span>
-    <div className="w-2" />/<div className="w-2" />5 min read
+    <strong>{format(new Date(metaData.date), "MMMM d, yyyy")}</strong>
+    <div className="w-2" />/<div className="w-2" />
+    {metaData.readTime}
   </div>
 );
 

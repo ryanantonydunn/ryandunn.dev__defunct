@@ -52,5 +52,5 @@
 
 .meta {
   @apply flex items-center;
-  @apply text-gray-500 uppercase text-sm;
+  @apply text-gray-600 uppercase text-sm;
 }

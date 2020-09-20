@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { MdArrowForward } from "react-icons/md";
+import { MdArrowForward, MdClose } from "react-icons/md";
 import styles from "./Button.module.css";
 
 export const ButtonList = ({ children }) => (
@@ -19,7 +19,7 @@ const Button = ({
   return disabled ? (
     <div className={`${styles.button} ${styles.disabled}`}>
       {title}
-      {icon && React.createElement(icon)}
+      {icon && <MdClose />}
     </div>
   ) : href ? (
     isExternalLink ? (
