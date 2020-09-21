@@ -34,7 +34,7 @@
   }
 
   h3 {
-    @apply mb-5 text-2xl text-teal-500;
+    @apply mb-5 text-2xl text-teal-700;
   }
 }
 

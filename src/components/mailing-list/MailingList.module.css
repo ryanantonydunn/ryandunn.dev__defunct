@@ -16,7 +16,7 @@
 }
 
 .btn {
-  @apply w-full bg-green-600 p-3 pr-5 pl-5 rounded-md mr-2 text-white;
+  @apply w-full bg-green-700 p-3 pr-5 pl-5 rounded-md mr-2 text-white;
 }
 
 .error {

@@ -37,13 +37,17 @@ const MailingList = ({ className }) => {
   return (
     <div className={`${styles.container} ${className}`}>
       <div className="md:flex md:flex-row items-center justify-between">
-        <h4>Get updates directly</h4>
+        <h2 className="h4">Get updates directly</h2>
         <p className="text-sm">*No nonsense, no spam, just content.</p>
       </div>
       {error && <div className={styles.error}>{error}</div>}
       {message && <div className={styles.message}>{message}</div>}
       <div className="sm:flex flex-row">
+        <label for="email" className="sr-only">
+          Email Address
+        </label>
         <input
+          id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

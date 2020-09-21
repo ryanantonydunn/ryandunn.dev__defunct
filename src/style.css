@@ -28,7 +28,7 @@ body {
 }
 
 a {
-  @apply text-blue-600;
+  @apply text-blue-700;
 }
 
 .pixel-transition {
@@ -87,7 +87,8 @@ h3 {
   }
 }
 
-h4 {
+h4,
+.h4 {
   @apply text-xl font-bold tracking-tight leading-snug;
 }
 
