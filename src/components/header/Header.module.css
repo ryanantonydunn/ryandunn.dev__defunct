@@ -45,7 +45,7 @@
   @apply text-gray-700;
 
   a {
-    @apply p-3 text-gray-700;
+    @apply p-2 text-gray-700;
     &.active {
       @apply font-bold;
     }
@@ -53,6 +53,9 @@
 
   @screen sm {
     @apply ml-auto mr-3;
+    a {
+      @apply p-3;
+    }
   }
 
   @screen lg {
@@ -64,7 +67,10 @@
 
 .break {
   width: 1px;
-  @apply bg-gray-300 h-6 ml-3 mr-3;
+  @apply bg-gray-300 h-6 ml-1 mr-1;
+  @screen sm {
+    @apply ml-3 mr-3;
+  }
 }
 
 @keyframes float-down {

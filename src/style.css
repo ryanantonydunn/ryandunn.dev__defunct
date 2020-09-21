@@ -28,7 +28,7 @@ body {
 }
 
 a {
-  color: #3182ce;
+  @apply text-blue-600;
 }
 
 .pixel-transition {
