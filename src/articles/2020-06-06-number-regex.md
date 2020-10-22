@@ -33,7 +33,7 @@ The first part of the problem is simple, filter any characters that aren't numbe
 n.replace(/[^\d.-]/g, ""); // output "-1-2..-34--.567."
 ```
 
-This looks mysterious if you haven't ever broken it down into pieces before, but I'll explain it bit by bit. We tell our match filter to find every match `/g` from a whitelist group `[ ]` that is not `^` a digit `\n`, a dot `.`, or a dash `-`. We use `replace` to replace all matches with nothing.
+This looks mysterious if you haven't ever broken it down into pieces before, but I'll explain it bit by bit. We tell our match filter to find every match `/g` from a whitelist group `[ ]` that is not `^` a digit `\d`, a dot `.`, or a dash `-`. We use `replace` to replace all matches with nothing.
 
 Note: normally the dot character would need escaping (`/\./g` matches all dots) but doesn't within the group.
 
