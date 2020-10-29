@@ -19,20 +19,22 @@ const Blog = ({ articles }) => {
         description="Front-end development blog. Javascript, ReactJS, React Native and Apps"
       />
       <Header />
-      <div className="content content_sm text-center pt-8 lg:pt-11">
-        <h1 className="mb-4">Blog</h1>
-        <p className="mb-8">
-          On-the-ground problem solving in frontend development.
-          <br />
-          Javascript, React, React Native, CSS, UX, Accessibility.
-        </p>
-      </div>
-      <div className="content content_lg">
+      <section>
+        <div className="content content_sm text-center pt-8 lg:pt-11">
+          <h1 className="mb-4">Blog</h1>
+          <p className="mb-8">
+            On-the-ground problem solving in frontend development.
+            <br />
+            Javascript, React, React Native, CSS, UX, Accessibility.
+          </p>
+        </div>
+      </section>
+      <section className="content content_lg">
         <ArticleList articles={articles} />
-      </div>
-      <div className="content content_sm">
+      </section>
+      <section className="content content_sm">
         <MailingList />
-      </div>
+      </section>
       <Footer />
     </>
   );

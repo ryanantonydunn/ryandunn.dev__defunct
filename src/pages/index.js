@@ -99,7 +99,7 @@ const Index = ({ articles }) => {
     <>
       <Meta />
       <Header />
-      <div className={styles.splash}>
+      <section className={styles.splash}>
         <div className={styles.splash_inner}>
           <LoadFloater delay={150}>
             <h1 className="mb-2">Front End Developer & Designer</h1>
@@ -113,47 +113,49 @@ const Index = ({ articles }) => {
             </div>
           </LoadFloater>
         </div>
-      </div>
-      <div className={styles.intro}>
-        <div className="pixel-transition" />
-        <div className={styles.intro_content}>
-          <h2 className="mb-6">Featured Projects</h2>
-        </div>
-      </div>
-      <div className={styles.projects}>
-        {projects.map((p, i) => (
-          <div key={i} className={styles.project}>
-            <div className={styles.project_inner}>
-              <div className={styles.project_image}>
-                <img
-                  className={p.imageClass || ""}
-                  src={`/static/images/${p.image}`}
-                  alt={`/static/images/${p.title}`}
-                />
-              </div>
-              {p.description}
-              <ButtonList>
-                {p.secondaryLink && (
-                  <Button
-                    secondary
-                    href={p.secondaryLink}
-                    title={p.secondaryLinkText}
-                  />
-                )}
-                {p.primaryLink && (
-                  <Button
-                    disabled={p.primaryLink === "disabled"}
-                    href={p.primaryLink}
-                    title={p.primaryLinkText}
-                  />
-                )}
-              </ButtonList>
-            </div>
+      </section>
+      <section>
+        <div className={styles.intro}>
+          <div className="pixel-transition" />
+          <div className={styles.intro_content}>
+            <h2 className="mb-6">Featured Projects</h2>
           </div>
-        ))}
-      </div>
+        </div>
+        <div className={styles.projects}>
+          {projects.map((p, i) => (
+            <div key={i} className={styles.project}>
+              <div className={styles.project_inner}>
+                <div className={styles.project_image}>
+                  <img
+                    className={p.imageClass || ""}
+                    src={`/static/images/${p.image}`}
+                    alt={`/static/images/${p.title}`}
+                  />
+                </div>
+                {p.description}
+                <ButtonList>
+                  {p.secondaryLink && (
+                    <Button
+                      secondary
+                      href={p.secondaryLink}
+                      title={p.secondaryLinkText}
+                    />
+                  )}
+                  {p.primaryLink && (
+                    <Button
+                      disabled={p.primaryLink === "disabled"}
+                      href={p.primaryLink}
+                      title={p.primaryLinkText}
+                    />
+                  )}
+                </ButtonList>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div className={styles.articles}>
+      <section className={styles.articles}>
         <h2>Latest Articles</h2>
         <p>
           On-the-ground problem solving in frontend development.
@@ -164,7 +166,7 @@ const Index = ({ articles }) => {
           <Button href="/blog" title="View all articles" />
         </p>
         <ArticleList articles={articles.slice(0, 3)} />
-      </div>
+      </section>
       <Footer />
     </>
   );

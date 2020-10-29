@@ -17,7 +17,7 @@ export default function Meta({
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="Description" content={description}></meta>
-      <link rel="shortcut icon" href="/static/favicon.webp" />
+      <link rel="shortcut icon" href="/static/favicon.png" />
       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 
       {/* Twitter */}

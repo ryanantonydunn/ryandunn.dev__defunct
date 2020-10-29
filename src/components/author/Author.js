@@ -3,7 +3,7 @@ import React from "react";
 
 const Author = ({ className }) => {
   return (
-    <div className={`flex flex-row items-center ${className}`}>
+    <aside className={`flex flex-row items-center ${className}`}>
       <div className="profile profile_sm">
         <img src="/static/images/ryandunn.webp" alt="Ryan Dunn" />
       </div>
@@ -17,7 +17,7 @@ const Author = ({ className }) => {
           </Link>
         </p>
       </div>
-    </div>
+    </aside>
   );
 };
 

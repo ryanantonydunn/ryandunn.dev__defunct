@@ -8,7 +8,7 @@ const About = () => {
     <>
       <Meta title="About - Ryan Dunn" />
       <Header />
-      <div className="content content_sm pt-8 lg:pt-11 mb-16">
+      <main className="content content_sm pt-8 lg:pt-11 mb-16">
         <h1 className="mb-4 text-center">About Me</h1>
         <p className="text-center">
           Hi there. I am Ryan Dunn, a front-end developer from Manchester U.K.
@@ -36,7 +36,7 @@ const About = () => {
           In my spare time I enjoy hiking, climbing, the outdoors, playing the
           guitar, and am a friend to dogs everywhere.
         </p>
-      </div>
+      </main>
       <Footer />
     </>
   );

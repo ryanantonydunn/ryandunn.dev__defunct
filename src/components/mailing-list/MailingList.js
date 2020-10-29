@@ -35,7 +35,7 @@ const MailingList = ({ className }) => {
   };
 
   return (
-    <div className={`${styles.container} ${className}`}>
+    <section className={`${styles.container} ${className}`}>
       <div className="md:flex md:flex-row items-center justify-between">
         <h2 className="h4">Get updates directly</h2>
         <p className="text-sm">*No nonsense, no spam, just content.</p>
@@ -62,7 +62,7 @@ const MailingList = ({ className }) => {
           <SpinnerOverlay active={loading}>Subscribe</SpinnerOverlay>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
