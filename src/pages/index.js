@@ -43,6 +43,7 @@ const projects = [
     primaryLinkText: "Visit Website",
   },
   {
+    ignore: true,
     title: "MyDailyTracker",
     description: (
       <>
@@ -67,6 +68,22 @@ const projects = [
     image: "mydailytracker.webp",
     primaryLink: "disabled",
     primaryLinkText: "Not available",
+  },
+  {
+    title: "Know My Values",
+    description: (
+      <>
+        <p>
+          Know my values is a simple mindset exercise to facilitate insight into
+          your personal core values. It uses a manual bubble-sort algorithm
+          letting people prioritise two chosen values at a time to then
+          calculate the ranked overall values. Useful for mindset exercises.
+        </p>
+      </>
+    ),
+    image: "know-my-values.webp",
+    primaryLink: "https://knowmyvalues.com/",
+    primaryLinkText: "Visit website",
   },
   {
     title: "Project Ants",
@@ -122,36 +139,38 @@ const Index = ({ articles }) => {
           </div>
         </div>
         <div className={styles.projects}>
-          {projects.map((p, i) => (
-            <div key={i} className={styles.project}>
-              <div className={styles.project_inner}>
-                <div className={styles.project_image}>
-                  <img
-                    className={p.imageClass || ""}
-                    src={`/static/images/${p.image}`}
-                    alt={`/static/images/${p.title}`}
-                  />
+          {projects
+            .filter((p) => !p.ignore)
+            .map((p, i) => (
+              <div key={i} className={styles.project}>
+                <div className={styles.project_inner}>
+                  <div className={styles.project_image}>
+                    <img
+                      className={p.imageClass || ""}
+                      src={`/static/images/${p.image}`}
+                      alt={`/static/images/${p.title}`}
+                    />
+                  </div>
+                  {p.description}
+                  <ButtonList>
+                    {p.secondaryLink && (
+                      <Button
+                        secondary
+                        href={p.secondaryLink}
+                        title={p.secondaryLinkText}
+                      />
+                    )}
+                    {p.primaryLink && (
+                      <Button
+                        disabled={p.primaryLink === "disabled"}
+                        href={p.primaryLink}
+                        title={p.primaryLinkText}
+                      />
+                    )}
+                  </ButtonList>
                 </div>
-                {p.description}
-                <ButtonList>
-                  {p.secondaryLink && (
-                    <Button
-                      secondary
-                      href={p.secondaryLink}
-                      title={p.secondaryLinkText}
-                    />
-                  )}
-                  {p.primaryLink && (
-                    <Button
-                      disabled={p.primaryLink === "disabled"}
-                      href={p.primaryLink}
-                      title={p.primaryLinkText}
-                    />
-                  )}
-                </ButtonList>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
 
