@@ -12,7 +12,6 @@
     "deploy": "next build && next export"
   },
   "dependencies": {
-    "@mailchimp/mailchimp_marketing": "^3.0.14",
     "date-fns": "^2.15.0",
     "gray-matter": "^4.0.2",
     "next": "^9.3.3",

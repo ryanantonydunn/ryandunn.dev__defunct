@@ -1,13 +1,9 @@
 import React from "react";
-import { FaCodepen, FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
+import { FaCodepen, FaGithub, FaTwitter } from "react-icons/fa";
 
 const SocialLinks = () => {
   return (
     <nav className="flex items-center justify-center lg:text-lg">
-      <a href="mailto:contact@ryandunn.dev" className="p-3 text-gray-700">
-        <span className="sr-only">Email: contact@ryandunn.dev</span>
-        <FaRegEnvelope />
-      </a>
       <a href="https://twitter.com/ryandunndev" className="p-3 text-gray-700">
         <span className="sr-only">Twitter: @ryandunndev</span>
         <FaTwitter />

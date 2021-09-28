@@ -3,7 +3,6 @@ import ArticleList, {
 } from "../components/article-list/ArticleList";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-import MailingList from "../components/mailing-list/MailingList";
 import Meta from "../components/meta/Meta";
 
 export const getStaticProps = async () => {
@@ -31,9 +30,6 @@ const Blog = ({ articles }) => {
       </section>
       <section className="content content_lg">
         <ArticleList articles={articles} />
-      </section>
-      <section className="content content_sm">
-        <MailingList />
       </section>
       <Footer />
     </>

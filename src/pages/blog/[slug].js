@@ -8,7 +8,6 @@ import {
 import Author from "../../components/author/Author";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import MailingList from "../../components/mailing-list/MailingList";
 import Meta from "../../components/meta/Meta";
 import Share from "../../components/share/Share";
 import vscDarkPlus from "../../utils/vsc-dark-plus";
@@ -71,7 +70,6 @@ const BlogTemplate = ({ body, metaData }) => {
           className="mb-8"
         />
         <Author className="mb-8" />
-        <MailingList />
       </div>
 
       <Footer />

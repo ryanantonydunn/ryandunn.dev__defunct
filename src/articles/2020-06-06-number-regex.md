@@ -1,7 +1,7 @@
 ---
 author: "Ryan Dunn"
 date: "2020-05-06T23:00:00.000Z"
-title: "In search of the ultimate number regex"
+title: "Formatting numerically usinf regex"
 description: "Doing perfect numerical validation using a single regex."
 slug: "in-search-of-the-ultimate-number-regex"
 readTime: "4 min read"
